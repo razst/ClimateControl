@@ -19,7 +19,13 @@ namespace ClimateControll
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
+        }
+
+        private void config_Click(object sender, EventArgs e)
+        {
+            SettingsFRM frm = new SettingsFRM();
+            frm.Show();
         }
     }
 }

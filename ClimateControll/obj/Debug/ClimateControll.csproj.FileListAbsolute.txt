@@ -1,0 +1,10 @@
+C:\dev\ClimateControl\ClimateControll\bin\Debug\ClimateControll.exe.config
+C:\dev\ClimateControl\ClimateControll\bin\Debug\ClimateControll.exe
+C:\dev\ClimateControl\ClimateControll\bin\Debug\ClimateControll.pdb
+C:\dev\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csprojAssemblyReference.cache
+C:\dev\ClimateControl\ClimateControll\obj\Debug\ClimateControll.Form1.resources
+C:\dev\ClimateControl\ClimateControll\obj\Debug\ClimateControll.Properties.Resources.resources
+C:\dev\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csproj.GenerateResource.cache
+C:\dev\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csproj.CoreCompileInputs.cache
+C:\dev\ClimateControl\ClimateControll\obj\Debug\ClimateControll.exe
+C:\dev\ClimateControl\ClimateControll\obj\Debug\ClimateControll.pdb

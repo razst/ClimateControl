@@ -27,5 +27,12 @@ namespace ClimateControll
             SettingsFRM frm = new SettingsFRM();
             frm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            greenBtn.Visible = !redBtn.Visible;
+        }
+
+
     }
 }

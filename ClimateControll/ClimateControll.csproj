@@ -46,12 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Class1.cs" />
     <Compile Include="Form1.cs">
+=======
+    <Compile Include="ArduConnect.cs">
+>>>>>>> b40f0576c7e8db8ed8a11891e54baf9a3ec38da2
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ArduConnect.Designer.cs">
+      <DependentUpon>ArduConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFRM.Designer.cs">
+      <DependentUpon>MainFRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,9 +71,17 @@
     <Compile Include="SettingsFRM.Designer.cs">
       <DependentUpon>SettingsFRM.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="units.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="ArduConnect.resx">
+      <DependentUpon>ArduConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFRM.resx">
+      <DependentUpon>MainFRM.cs</DependentUpon>
+>>>>>>> b40f0576c7e8db8ed8a11891e54baf9a3ec38da2
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +93,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SettingsFRM.resx">
+      <DependentUpon>SettingsFRM.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

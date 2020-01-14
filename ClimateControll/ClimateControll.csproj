@@ -48,11 +48,15 @@
   <ItemGroup>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Class1.cs" />
     <Compile Include="Form1.cs">
 =======
     <Compile Include="ArduConnect.cs">
 >>>>>>> b40f0576c7e8db8ed8a11891e54baf9a3ec38da2
+=======
+    <Compile Include="Form1.cs">
+>>>>>>> parent of b40f057... more windows
 =======
     <Compile Include="Form1.cs">
 >>>>>>> parent of b40f057... more windows
@@ -71,6 +75,7 @@
     </Compile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="units.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -81,6 +86,10 @@
     <EmbeddedResource Include="MainFRM.resx">
       <DependentUpon>MainFRM.cs</DependentUpon>
 >>>>>>> b40f0576c7e8db8ed8a11891e54baf9a3ec38da2
+=======
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+>>>>>>> parent of b40f057... more windows
 =======
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

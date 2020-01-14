@@ -19,6 +19,7 @@ C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateCon
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.pdb
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\bin\Debug\Interop.WMPLib.dll
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\Interop.WMPLib.dll
@@ -36,5 +37,7 @@ C:\Users\admin\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\Climate
 C:\Users\admin\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.pdb
 C:\Users\admin\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.SettingsFRM.resources
 >>>>>>> b40f0576c7e8db8ed8a11891e54baf9a3ec38da2
+=======
+>>>>>>> parent of b40f057... more windows
 =======
 >>>>>>> parent of b40f057... more windows

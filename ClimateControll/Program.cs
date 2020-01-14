@@ -16,7 +16,7 @@ namespace ClimateControll
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainFRM());
+            Application.Run(new Form1());
         }
     }
 }

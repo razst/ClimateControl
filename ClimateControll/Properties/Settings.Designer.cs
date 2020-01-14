@@ -106,5 +106,17 @@ namespace ClimateControll.Properties {
                 this["turnOnAlert"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string port {
+            get {
+                return ((string)(this["port"]));
+            }
+            set {
+                this["port"] = value;
+            }
+        }
     }
 }

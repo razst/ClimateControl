@@ -12,7 +12,6 @@ C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\bin\Debug\ClimateCon
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\bin\Debug\ClimateControll.exe
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\bin\Debug\ClimateControll.pdb
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csprojAssemblyReference.cache
-C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.Form1.resources
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.Properties.Resources.resources
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csproj.GenerateResource.cache
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.exe
@@ -27,3 +26,6 @@ C:\Users\admin\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\Climate
 C:\Users\admin\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.exe
 C:\Users\admin\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.pdb
 C:\Users\admin\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.SettingsFRM.resources
+C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.ArduConnect.resources
+C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.MainFRM.resources
+C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.SettingsFRM.resources

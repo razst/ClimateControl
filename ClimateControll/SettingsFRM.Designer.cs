@@ -42,12 +42,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbPortName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CbAlert
             // 
             this.CbAlert.AutoSize = true;
-            this.CbAlert.Location = new System.Drawing.Point(57, 296);
+            this.CbAlert.Location = new System.Drawing.Point(57, 313);
             this.CbAlert.Name = "CbAlert";
             this.CbAlert.Size = new System.Drawing.Size(69, 17);
             this.CbAlert.TabIndex = 25;
@@ -57,7 +59,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 243);
+            this.label5.Location = new System.Drawing.Point(54, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 24;
@@ -65,7 +67,7 @@
             // 
             // TbMailAdress
             // 
-            this.TbMailAdress.Location = new System.Drawing.Point(148, 259);
+            this.TbMailAdress.Location = new System.Drawing.Point(148, 277);
             this.TbMailAdress.Name = "TbMailAdress";
             this.TbMailAdress.Size = new System.Drawing.Size(100, 20);
             this.TbMailAdress.TabIndex = 23;
@@ -73,7 +75,7 @@
             // CbMail
             // 
             this.CbMail.AutoSize = true;
-            this.CbMail.Location = new System.Drawing.Point(57, 262);
+            this.CbMail.Location = new System.Drawing.Point(57, 280);
             this.CbMail.Name = "CbMail";
             this.CbMail.Size = new System.Drawing.Size(85, 17);
             this.CbMail.TabIndex = 22;
@@ -163,11 +165,30 @@
             this.CancelButton.Text = "cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 236);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "port:";
+            // 
+            // tbPortName
+            // 
+            this.tbPortName.Location = new System.Drawing.Point(125, 229);
+            this.tbPortName.Name = "tbPortName";
+            this.tbPortName.Size = new System.Drawing.Size(100, 20);
+            this.tbPortName.TabIndex = 28;
+            this.tbPortName.Text = "COM";
+            // 
             // SettingsFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbPortName);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.CbAlert);
@@ -206,5 +227,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button OKButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbPortName;
     }
 }

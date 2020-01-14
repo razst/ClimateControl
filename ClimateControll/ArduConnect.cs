@@ -21,12 +21,9 @@ namespace ClimateControll
 
         private SerialPort mySerialPort;
         private string indata = "";
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
+        private string[] tempHum;
+        private string temp;
+        private string hum;
         private void DataReceivedHandler(
                                 object sender,
                                 SerialDataReceivedEventArgs e)
@@ -40,7 +37,14 @@ namespace ClimateControll
 
         private void displayDataEvent(object sender, EventArgs e)
         {
-            data.Text = indata;
+            if (indata.Contains(','))
+            {
+                tempHum = indata.Split(',');
+                temp = tempHum[1];
+                hum = tempHum[0];
+                TbxHum.Text = hum;
+                TbxTemp.Text = temp;
+            }
         }
 
 
@@ -48,7 +52,7 @@ namespace ClimateControll
         {
 
 
-            mySerialPort = new SerialPort(tbPortName.Text);
+            mySerialPort = new SerialPort(Properties.Settings.Default.port);
 
             mySerialPort.BaudRate = 9600;
             mySerialPort.Parity = Parity.None;
@@ -56,19 +60,15 @@ namespace ClimateControll
             mySerialPort.DataBits = 8;
             mySerialPort.Handshake = Handshake.None;
             mySerialPort.RtsEnable = true;
-
-            mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-
             mySerialPort.Open();
-
-
-
-
+            mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             mySerialPort.Close();
         }
+
+
     }
 }

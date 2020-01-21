@@ -65,6 +65,7 @@
             // 
             // TbxHum
             // 
+            this.TbxHum.AccessibleName = "";
             this.TbxHum.AutoSize = true;
             this.TbxHum.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.TbxHum.Location = new System.Drawing.Point(463, 125);
@@ -84,6 +85,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ArduConnect";
             this.Text = "ArduConnect";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArduConnect_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

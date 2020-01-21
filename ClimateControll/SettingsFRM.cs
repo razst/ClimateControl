@@ -83,6 +83,20 @@ namespace ClimateControll
             {
                 MessageBox.Show("values in red are bed", "error");
             }
+
+            Close();
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you don't want to save changes?", "Cancel", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
+
+            
         }
     }
 }

@@ -60,15 +60,30 @@ namespace ClimateControll
             mySerialPort.DataBits = 8;
             mySerialPort.Handshake = Handshake.None;
             mySerialPort.RtsEnable = true;
-            mySerialPort.Open();
+
+            try
+            {
+                mySerialPort.Open();
+            }
+            catch
+            {
+                MessageBox.Show("unable to connect to temp sensor, check COM number in settings", "error");
+            }
+            
+            
             mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mySerialPort.Close();
+            if (mySerialPort !=null)
+                mySerialPort.Close();
         }
 
-
+        private void ArduConnect_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (mySerialPort != null)
+                mySerialPort.Close();
+        }
     }
 }

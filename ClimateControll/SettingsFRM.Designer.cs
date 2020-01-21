@@ -44,12 +44,18 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPortName = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // CbAlert
             // 
             this.CbAlert.AutoSize = true;
-            this.CbAlert.Location = new System.Drawing.Point(57, 313);
+            this.CbAlert.Location = new System.Drawing.Point(12, 54);
             this.CbAlert.Name = "CbAlert";
             this.CbAlert.Size = new System.Drawing.Size(69, 17);
             this.CbAlert.TabIndex = 25;
@@ -59,7 +65,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 261);
+            this.label5.Location = new System.Drawing.Point(9, 2);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 24;
@@ -67,7 +73,7 @@
             // 
             // TbMailAdress
             // 
-            this.TbMailAdress.Location = new System.Drawing.Point(148, 277);
+            this.TbMailAdress.Location = new System.Drawing.Point(103, 18);
             this.TbMailAdress.Name = "TbMailAdress";
             this.TbMailAdress.Size = new System.Drawing.Size(100, 20);
             this.TbMailAdress.TabIndex = 23;
@@ -75,7 +81,7 @@
             // CbMail
             // 
             this.CbMail.AutoSize = true;
-            this.CbMail.Location = new System.Drawing.Point(57, 280);
+            this.CbMail.Location = new System.Drawing.Point(12, 21);
             this.CbMail.Name = "CbMail";
             this.CbMail.Size = new System.Drawing.Size(85, 17);
             this.CbMail.TabIndex = 22;
@@ -84,28 +90,28 @@
             // 
             // TbMaxHumidity
             // 
-            this.TbMaxHumidity.Location = new System.Drawing.Point(125, 186);
+            this.TbMaxHumidity.Location = new System.Drawing.Point(95, 130);
             this.TbMaxHumidity.Name = "TbMaxHumidity";
             this.TbMaxHumidity.Size = new System.Drawing.Size(100, 20);
             this.TbMaxHumidity.TabIndex = 21;
             // 
             // TbMinHumidity
             // 
-            this.TbMinHumidity.Location = new System.Drawing.Point(125, 142);
+            this.TbMinHumidity.Location = new System.Drawing.Point(95, 86);
             this.TbMinHumidity.Name = "TbMinHumidity";
             this.TbMinHumidity.Size = new System.Drawing.Size(100, 20);
             this.TbMinHumidity.TabIndex = 20;
             // 
             // TbMaxTemp
             // 
-            this.TbMaxTemp.Location = new System.Drawing.Point(125, 103);
+            this.TbMaxTemp.Location = new System.Drawing.Point(95, 47);
             this.TbMaxTemp.Name = "TbMaxTemp";
             this.TbMaxTemp.Size = new System.Drawing.Size(100, 20);
             this.TbMaxTemp.TabIndex = 19;
             // 
             // TbMinTemp
             // 
-            this.TbMinTemp.Location = new System.Drawing.Point(125, 67);
+            this.TbMinTemp.Location = new System.Drawing.Point(95, 11);
             this.TbMinTemp.Name = "TbMinTemp";
             this.TbMinTemp.Size = new System.Drawing.Size(100, 20);
             this.TbMinTemp.TabIndex = 18;
@@ -113,7 +119,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 193);
+            this.label4.Location = new System.Drawing.Point(24, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 17;
@@ -122,7 +128,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 149);
+            this.label3.Location = new System.Drawing.Point(24, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 16;
@@ -131,7 +137,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 106);
+            this.label2.Location = new System.Drawing.Point(24, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 15;
@@ -140,7 +146,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 70);
+            this.label1.Location = new System.Drawing.Point(24, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 14;
@@ -148,7 +154,7 @@
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(125, 386);
+            this.OKButton.Location = new System.Drawing.Point(37, 8);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(75, 23);
             this.OKButton.TabIndex = 26;
@@ -158,17 +164,18 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(341, 386);
+            this.CancelButton.Location = new System.Drawing.Point(134, 8);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 27;
             this.CancelButton.Text = "cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 236);
+            this.label6.Location = new System.Drawing.Point(24, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 29;
@@ -176,38 +183,70 @@
             // 
             // tbPortName
             // 
-            this.tbPortName.Location = new System.Drawing.Point(125, 229);
+            this.tbPortName.Location = new System.Drawing.Point(95, 173);
             this.tbPortName.Name = "tbPortName";
             this.tbPortName.Size = new System.Drawing.Size(100, 20);
             this.tbPortName.TabIndex = 28;
             this.tbPortName.Text = "COM";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.tbPortName);
+            this.panel1.Controls.Add(this.TbMaxHumidity);
+            this.panel1.Controls.Add(this.TbMinHumidity);
+            this.panel1.Controls.Add(this.TbMaxTemp);
+            this.panel1.Controls.Add(this.TbMinTemp);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(29, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(243, 302);
+            this.panel1.TabIndex = 30;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.CbAlert);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.TbMailAdress);
+            this.panel2.Controls.Add(this.CbMail);
+            this.panel2.Location = new System.Drawing.Point(15, 203);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(213, 86);
+            this.panel2.TabIndex = 30;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.CancelButton);
+            this.panel3.Controls.Add(this.OKButton);
+            this.panel3.Location = new System.Drawing.Point(29, 312);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(243, 39);
+            this.panel3.TabIndex = 31;
+            // 
             // SettingsFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.tbPortName);
-            this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.OKButton);
-            this.Controls.Add(this.CbAlert);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.TbMailAdress);
-            this.Controls.Add(this.CbMail);
-            this.Controls.Add(this.TbMaxHumidity);
-            this.Controls.Add(this.TbMinHumidity);
-            this.Controls.Add(this.TbMaxTemp);
-            this.Controls.Add(this.TbMinTemp);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(303, 357);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SettingsFRM";
             this.Text = "SettingsFRM";
             this.Load += new System.EventHandler(this.SettingsFRM_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -229,5 +268,8 @@
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbPortName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

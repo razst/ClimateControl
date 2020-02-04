@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ClimateControll
 {
-    public partial class MainFRM : Form
+    public partial class Form1 : Form
     {
-        public MainFRM()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -26,22 +26,6 @@ namespace ClimateControll
         {
             SettingsFRM frm = new SettingsFRM();
             frm.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ArduConnect frm2 = new ArduConnect();
-            frm2.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string s = "34,56";
-            string [] s1;
-            s1 = s.Split(',');
-            Console.WriteLine(s1[0]);
-            Console.WriteLine(s1[1]);
-
         }
     }
 }

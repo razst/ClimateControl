@@ -21,12 +21,9 @@ namespace ClimateControll
 
         private SerialPort mySerialPort;
         private string indata = "";
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
+        private string[] tempHum;
+        private string temp;
+        private string hum;
         private void DataReceivedHandler(
                                 object sender,
                                 SerialDataReceivedEventArgs e)
@@ -40,7 +37,14 @@ namespace ClimateControll
 
         private void displayDataEvent(object sender, EventArgs e)
         {
-            data.Text = indata;
+            if (indata.Contains(','))
+            {
+                tempHum = indata.Split(',');
+                temp = tempHum[1];
+                hum = tempHum[0];
+                TbxHum.Text = hum;
+                TbxTemp.Text = temp;
+            }
         }
 
 
@@ -48,7 +52,7 @@ namespace ClimateControll
         {
 
 
-            mySerialPort = new SerialPort(tbPortName.Text);
+            mySerialPort = new SerialPort(Properties.Settings.Default.port);
 
             mySerialPort.BaudRate = 9600;
             mySerialPort.Parity = Parity.None;
@@ -57,18 +61,29 @@ namespace ClimateControll
             mySerialPort.Handshake = Handshake.None;
             mySerialPort.RtsEnable = true;
 
+            try
+            {
+                mySerialPort.Open();
+            }
+            catch
+            {
+                MessageBox.Show("unable to connect to temp sensor, check COM number in settings", "error");
+            }
+            
+            
             mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-
-            mySerialPort.Open();
-
-
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mySerialPort.Close();
+            if (mySerialPort !=null)
+                mySerialPort.Close();
+        }
+
+        private void ArduConnect_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (mySerialPort != null)
+                mySerialPort.Close();
         }
     }
 }

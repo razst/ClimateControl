@@ -26,6 +26,7 @@ namespace ClimateControll
             TbMailAdress.Text = Properties.Settings.Default.mailAdrees;
             CbMail.Checked = Properties.Settings.Default.sendMail;
             CbAlert.Checked = Properties.Settings.Default.turnOnAlert;
+            tbPortName.Text = Properties.Settings.Default.port;
         }
 
         private void OKButton_Click(object sender, EventArgs e)
@@ -70,6 +71,7 @@ namespace ClimateControll
                 Properties.Settings.Default.mailAdrees = TbMailAdress.Text;
                 Properties.Settings.Default.sendMail = CbMail.Checked;
                 Properties.Settings.Default.turnOnAlert = CbAlert.Checked;
+                Properties.Settings.Default.port = tbPortName.Text;
                 Properties.Settings.Default.Save();
                 MessageBox.Show("all values are saved");
             }
@@ -81,6 +83,20 @@ namespace ClimateControll
             {
                 MessageBox.Show("values in red are bed", "error");
             }
+
+            Close();
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you don't want to save changes?", "Cancel", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
+
+            
         }
     }
 }

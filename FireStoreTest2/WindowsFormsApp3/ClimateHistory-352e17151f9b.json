@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "climatehistory-3ff7e",
+  "private_key_id": "352e17151f9bf7dd81218cdaea499383bb862df2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzhvaukDHfPFHc\nteVZmvECCL4em0hnpHg8LZPTLgG4Cn+ixIcjmSH87/g5Dc26xMzdSlsMqocwJW5C\nFt3p1j/nlT/z9yoA8Tia+nnmJ9OKv4Kf44W6fCOaTIJekLlCc8Qqr0K003NzesI2\nxczX7wKdy0SFoesRuigrIIkLmaWBBhNt4nN/5er9vb2IkMVZbTwGgeBKRSdYV9P/\n61DSOYBrfPaXc8u/IxWL1Cm/RAaX0VvN4rWwRghJ8Zb7SHymCmrxePslHOB9ybyn\nzaNEnk+mXFjGDNA69kfzC2LGdL28ro5yLV2K4GmLhkEDIQdw3EvMwnnZ1hIqbC4J\nSkdoey5bAgMBAAECggEAHYacapBPi3n1srl9u3N2oNGERy9dxKHxnmAWmFxQLw8W\n99OfsDSeuOVUqzmAdO+qC9kPSXGAY2Q8koUFQVCZ2QIcbwje8SG7IA4C3138dizS\nFG7MjyOcjWN464mc1neIs0Z4z5mZOsxdRbnZW0g1Y3NLVTkQmq1FrvYeY/iElkf9\nb+KzcRx9/cfkdqA3maT9+DA/7Wyh++B+o1K39V78M2mJPaQfrdU8eDozlJ2tgBhS\nQxfZmtCcZwCyHEm2WG43FUem7653/oh6/Y38WIz2lO5OqIiig2+LL9RpLqMAY13Y\n4rCpofOJwNKXrVY8QWOECBbF9I+9JOXvRUWh1mdFkQKBgQDg7ZY4WpVaqu9oBXFt\nA7+raaps24Bt9JDikxJIQke9HOzOs4ylTv2zZh+nmeqfU/3nB/jwf6Erqe5qFoCq\nLMMgviY3rKeiI40+qSw3xj+w66G4rRensfbq8IZqsCNZgidL/Kg3JdZtitFbep3C\nRh05SYzCZw/NepXr+c0jcR63qwKBgQDMU88UTjQemOXdjrJewzorA3bjdkKthqHX\n+vcYcxaZV2GHbKP8k/brVXba+pprP6ZqcYXzueVUJjD27oviJWBuEIjNxUJROPxK\n7d/yXNyLbCC0esfvcq6ecmJdFk08CIDRLYecx10w7FsO+vuUH8ptW4nXbtbOVRs3\nDAkOESb0EQKBgH1xQ6QuMLmeN2KmFnob6xtoFNodGOU5zkvuhfWysVuw9AjbbgcL\npMYWoHTSjF1LdIESmy1VoMc/QG3+GsfNqw1pvtqx+dOdTDq0EqsQb5j18P2T22t0\n/yZL+ksp7K0Qv2XLhO0stwfksZn5Kl6cx9OZR11sKQ4J3e77JAMuJVl9AoGBAJq+\nKgklxOEbSJLHvBx6W/YxdHuFl6/VU4K/hR0WJBpTjABE7diespS9r/rdac8pcD4S\n5bCUq7JUDickt/m39tTEXub/ql7a+m9AwabKXxiT9hzZE8wrHUXQOOBowGtjwTMp\n+RdqARDJH5kzyQ4AGY1Ckxz9y16OI8NHsR/fK5IRAoGBAJHIV06lNKGvUPxbi4Jr\nabRKcQCp1EM1LoHJYUOfscbDpiXwPFBQPkLUYOV5GYV53grV0OPm5Gse6MNWHVc/\nvbga79rLmh4KDtUUeGIdk0frYk0TeHcc6/zTeDEkfxfbSFj7b9K2gj+2M7emkz6Q\n6rSbwFlGKm3uAQNmXQ0kxI7y\n-----END PRIVATE KEY-----\n",
+  "client_email": "owner-727@climatehistory-3ff7e.iam.gserviceaccount.com",
+  "client_id": "101265135507193448739",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/owner-727%40climatehistory-3ff7e.iam.gserviceaccount.com"
+}

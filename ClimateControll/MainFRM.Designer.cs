@@ -36,7 +36,11 @@
             this.TbxTemp = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.desi = new System.Windows.Forms.Label();
+            this.pbRed = new System.Windows.Forms.PictureBox();
+            this.pbGreen = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGreen)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -120,11 +124,34 @@
             this.desi.TabIndex = 15;
             this.desi.Text = "Tempture:";
             // 
+            // pbRed
+            // 
+            this.pbRed.Image = global::ClimateControll.Properties.Resources.red_button;
+            this.pbRed.Location = new System.Drawing.Point(482, 174);
+            this.pbRed.Name = "pbRed";
+            this.pbRed.Size = new System.Drawing.Size(100, 89);
+            this.pbRed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbRed.TabIndex = 16;
+            this.pbRed.TabStop = false;
+            // 
+            // pbGreen
+            // 
+            this.pbGreen.Image = global::ClimateControll.Properties.Resources.green_button;
+            this.pbGreen.Location = new System.Drawing.Point(482, 174);
+            this.pbGreen.Name = "pbGreen";
+            this.pbGreen.Size = new System.Drawing.Size(100, 89);
+            this.pbGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbGreen.TabIndex = 17;
+            this.pbGreen.TabStop = false;
+            this.pbGreen.Click += new System.EventHandler(this.pbGreen_Click);
+            // 
             // MainFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pbGreen);
+            this.Controls.Add(this.pbRed);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.config);
             this.Controls.Add(this.button1);
@@ -133,6 +160,8 @@
             this.Load += new System.EventHandler(this.MainFRM_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGreen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,6 +176,8 @@
         private System.Windows.Forms.Label TbxTemp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label desi;
+        private System.Windows.Forms.PictureBox pbRed;
+        private System.Windows.Forms.PictureBox pbGreen;
     }
 }
 

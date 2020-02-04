@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Media;
+using System.Net.Mail;
+using System.Net;
 
 namespace ClimateControll
 {
     public partial class MainFRM : Form
     {
+        private SerialPort mySerialPort;
+        private string indata = "";
+        private string[] tempHum;
+        private string temp;
+        private string hum;
         public MainFRM()
         {
             InitializeComponent();
@@ -29,15 +37,6 @@ namespace ClimateControll
             frm.Show();
         }
 
-
-
-
-
-        private SerialPort mySerialPort;
-        private string indata = "";
-        private string[] tempHum;
-        private string temp;
-        private string hum;
         private void DataReceivedHandler(
                                 object sender,
                                 SerialDataReceivedEventArgs e)
@@ -58,7 +57,14 @@ namespace ClimateControll
                 hum = tempHum[0];
                 TbxHum.Text = hum;
                 TbxTemp.Text = temp;
+               
+                if (true/*checkAlaram(Properties.Settings.Default.minTemp, Properties.Settings.Default.maxTemp,
+                    Properties.Settings.Default.maxHumidity,Properties.Settings.Default.minHumidity)*/) 
+                {
+                    playAlarm();
+                }
             }
+
         }
 
 
@@ -101,6 +107,44 @@ namespace ClimateControll
         }
 
         private void MainFRM_Load(object sender, EventArgs e)
+        {
+
+        }
+        private Boolean checkAlaram(int minTemp, int maxTemp, int maxHum, int minHum)
+        {
+            int CurrectTemp = int.Parse(tempHum[1]);
+            int Currecthum = int.Parse(tempHum[0]);
+            if (CurrectTemp > maxTemp || CurrectTemp < minTemp || Currecthum > maxHum || Currecthum < minHum)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        private void playAlarm()
+        {
+            DateTime now = DateTime.Now;
+
+            SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\alarm.wav");
+            soundAlarm.Play();
+            if (Properties.Settings.Default.sendMail) { 
+           /* MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
+            msg.IsBodyHtml = true;
+            SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
+            sc.UseDefaultCredentials = false;
+            NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");
+            sc.Credentials = cre;
+            sc.EnableSsl = true;
+            sc.Send(msg);
+            MessageBox.Show("massage send");*/
+        }
+            pbGreen.Visible = !pbGreen.Visible;
+        }
+
+        private void pbGreen_Click(object sender, EventArgs e)
         {
 
         }

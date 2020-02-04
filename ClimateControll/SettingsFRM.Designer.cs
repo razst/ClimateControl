@@ -30,7 +30,7 @@
         {
             this.CbAlert = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TbMailAdress = new System.Windows.Forms.TextBox();
+            this.TbxMailAdress = new System.Windows.Forms.TextBox();
             this.CbMail = new System.Windows.Forms.CheckBox();
             this.TbMaxHumidity = new System.Windows.Forms.TextBox();
             this.TbMinHumidity = new System.Windows.Forms.TextBox();
@@ -71,12 +71,13 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "in case of deviation:";
             // 
-            // TbMailAdress
+            // TbxMailAdress
             // 
-            this.TbMailAdress.Location = new System.Drawing.Point(103, 18);
-            this.TbMailAdress.Name = "TbMailAdress";
-            this.TbMailAdress.Size = new System.Drawing.Size(100, 20);
-            this.TbMailAdress.TabIndex = 23;
+            this.TbxMailAdress.Location = new System.Drawing.Point(103, 18);
+            this.TbxMailAdress.Name = "TbxMailAdress";
+            this.TbxMailAdress.Size = new System.Drawing.Size(100, 20);
+            this.TbxMailAdress.TabIndex = 23;
+            this.TbxMailAdress.TextChanged += new System.EventHandler(this.TbMailAdress_TextChanged);
             // 
             // CbMail
             // 
@@ -213,7 +214,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.CbAlert);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.TbMailAdress);
+            this.panel2.Controls.Add(this.TbxMailAdress);
             this.panel2.Controls.Add(this.CbMail);
             this.panel2.Location = new System.Drawing.Point(15, 203);
             this.panel2.Name = "panel2";
@@ -254,7 +255,7 @@
 
         private System.Windows.Forms.CheckBox CbAlert;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TbMailAdress;
+        private System.Windows.Forms.TextBox TbxMailAdress;
         private System.Windows.Forms.CheckBox CbMail;
         private System.Windows.Forms.TextBox TbMaxHumidity;
         private System.Windows.Forms.TextBox TbMinHumidity;

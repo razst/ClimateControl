@@ -23,7 +23,7 @@ namespace ClimateControll
             TbMinTemp.Text = "" + Properties.Settings.Default.minTemp;
             TbMaxHumidity.Text = "" + Properties.Settings.Default.maxHumidity;
             TbMinHumidity.Text = "" + Properties.Settings.Default.minHumidity;
-            TbMailAdress.Text = Properties.Settings.Default.mailAdrees;
+            TbxMailAdress.Text = Properties.Settings.Default.mailAdrees;
             CbMail.Checked = Properties.Settings.Default.sendMail;
             CbAlert.Checked = Properties.Settings.Default.turnOnAlert;
             tbPortName.Text = Properties.Settings.Default.port;
@@ -62,20 +62,20 @@ namespace ClimateControll
                 label4.ForeColor = System.Drawing.Color.Red;
             }
 
-            if (currect && (TbMailAdress.Text != "" || CbMail.Checked == false))
+            if (currect && (TbxMailAdress.Text != "" || CbMail.Checked == false))
             {
                 Properties.Settings.Default.maxTemp = int.Parse(TbMaxTemp.Text);
                 Properties.Settings.Default.minTemp = int.Parse(TbMinTemp.Text);
                 Properties.Settings.Default.maxHumidity = int.Parse(TbMaxHumidity.Text);
                 Properties.Settings.Default.minHumidity = int.Parse(TbMinHumidity.Text);
-                Properties.Settings.Default.mailAdrees = TbMailAdress.Text;
+                Properties.Settings.Default.mailAdrees = TbxMailAdress.Text;
                 Properties.Settings.Default.sendMail = CbMail.Checked;
                 Properties.Settings.Default.turnOnAlert = CbAlert.Checked;
                 Properties.Settings.Default.port = tbPortName.Text;
                 Properties.Settings.Default.Save();
                 MessageBox.Show("all values are saved");
             }
-            else if (TbMailAdress.Text == "" && CbMail.Checked == true)
+            else if (TbxMailAdress.Text == "" && CbMail.Checked == true)
             {
                 MessageBox.Show("email adress box is empty", "error");
             }
@@ -97,6 +97,11 @@ namespace ClimateControll
             }
 
             
+        }
+
+        private void TbMailAdress_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

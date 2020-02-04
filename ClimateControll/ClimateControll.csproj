@@ -71,6 +71,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SettingsFRM.resx">
       <DependentUpon>SettingsFRM.cs</DependentUpon>
@@ -87,6 +88,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red button.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

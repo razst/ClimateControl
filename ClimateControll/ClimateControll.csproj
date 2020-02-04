@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArduConnect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ArduConnect.Designer.cs">
-      <DependentUpon>ArduConnect.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainFRM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,9 +60,6 @@
     <Compile Include="SettingsFRM.Designer.cs">
       <DependentUpon>SettingsFRM.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ArduConnect.resx">
-      <DependentUpon>ArduConnect.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainFRM.resx">
       <DependentUpon>MainFRM.cs</DependentUpon>
     </EmbeddedResource>

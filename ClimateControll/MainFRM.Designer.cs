@@ -30,8 +30,13 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.config = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.startBut = new System.Windows.Forms.Button();
+            this.stopBut = new System.Windows.Forms.Button();
+            this.TbxHum = new System.Windows.Forms.Label();
+            this.TbxTemp = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.desi = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -46,7 +51,7 @@
             // 
             // config
             // 
-            this.config.Location = new System.Drawing.Point(485, 382);
+            this.config.Location = new System.Drawing.Point(266, 382);
             this.config.Name = "config";
             this.config.Size = new System.Drawing.Size(75, 23);
             this.config.TabIndex = 1;
@@ -54,37 +59,80 @@
             this.config.UseVisualStyleBackColor = true;
             this.config.Click += new System.EventHandler(this.config_Click);
             // 
-            // button2
+            // startBut
             // 
-            this.button2.Location = new System.Drawing.Point(484, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Ardu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.startBut.Location = new System.Drawing.Point(3, 148);
+            this.startBut.Name = "startBut";
+            this.startBut.Size = new System.Drawing.Size(75, 23);
+            this.startBut.TabIndex = 8;
+            this.startBut.Text = "start";
+            this.startBut.UseVisualStyleBackColor = true;
+            this.startBut.Click += new System.EventHandler(this.startBut_Click);
             // 
-            // button3
+            // stopBut
             // 
-            this.button3.Location = new System.Drawing.Point(271, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.stopBut.Location = new System.Drawing.Point(122, 148);
+            this.stopBut.Name = "stopBut";
+            this.stopBut.Size = new System.Drawing.Size(75, 23);
+            this.stopBut.TabIndex = 9;
+            this.stopBut.Text = "stop";
+            this.stopBut.UseVisualStyleBackColor = true;
+            this.stopBut.Click += new System.EventHandler(this.stopBut_Click);
+            // 
+            // TbxHum
+            // 
+            this.TbxHum.AccessibleName = "";
+            this.TbxHum.AutoSize = true;
+            this.TbxHum.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TbxHum.Location = new System.Drawing.Point(151, 64);
+            this.TbxHum.Name = "TbxHum";
+            this.TbxHum.Size = new System.Drawing.Size(16, 13);
+            this.TbxHum.TabIndex = 13;
+            this.TbxHum.Text = "...";
+            // 
+            // TbxTemp
+            // 
+            this.TbxTemp.AutoSize = true;
+            this.TbxTemp.Location = new System.Drawing.Point(28, 64);
+            this.TbxTemp.Name = "TbxTemp";
+            this.TbxTemp.Size = new System.Drawing.Size(16, 13);
+            this.TbxTemp.TabIndex = 14;
+            this.TbxTemp.Text = "...";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.desi);
+            this.panel1.Controls.Add(this.startBut);
+            this.panel1.Controls.Add(this.TbxHum);
+            this.panel1.Controls.Add(this.TbxTemp);
+            this.panel1.Controls.Add(this.stopBut);
+            this.panel1.Location = new System.Drawing.Point(203, 92);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 174);
+            this.panel1.TabIndex = 15;
+            // 
+            // desi
+            // 
+            this.desi.AutoSize = true;
+            this.desi.Location = new System.Drawing.Point(19, 34);
+            this.desi.Name = "desi";
+            this.desi.Size = new System.Drawing.Size(55, 13);
+            this.desi.TabIndex = 15;
+            this.desi.Text = "Tempture:";
             // 
             // MainFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.config);
             this.Controls.Add(this.button1);
             this.Name = "MainFRM";
             this.Text = "Climate Controll System";
+            this.Load += new System.EventHandler(this.MainFRM_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -93,8 +141,12 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button config;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button startBut;
+        private System.Windows.Forms.Button stopBut;
+        private System.Windows.Forms.Label TbxHum;
+        private System.Windows.Forms.Label TbxTemp;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label desi;
     }
 }
 

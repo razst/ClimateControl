@@ -11,16 +11,22 @@ using System.IO.Ports;
 using System.Media;
 using System.Net.Mail;
 using System.Net;
+using Google.Cloud.Firestore;
 
 namespace ClimateControll
 {
+
     public partial class MainFRM : Form
     {
+        private TempInfo t = new TempInfo();
+        private DateTime lastReport = DateTime.Now;
         private SerialPort mySerialPort;
         private string indata = "";
         private string[] tempHum;
         private string temp;
         private string hum;
+        private FirestoreDb db = FirestoreDb.Create("climatehistory-3ff7e");
+        private string COLLECTION_NAME = "ClimateInfo";
         public MainFRM()
         {
             InitializeComponent();
@@ -48,16 +54,34 @@ namespace ClimateControll
 
         }
 
-        private void displayDataEvent(object sender, EventArgs e)
+        private async void displayDataEvent(object sender, EventArgs e)
         {
             if (indata.Contains(','))
             {
+                DateTime now = DateTime.Now;
+                long nowUnixTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
+                long lastUnixTime = ((DateTimeOffset)lastReport).ToUnixTimeSeconds();
+
                 tempHum = indata.Split(',');
                 temp = tempHum[1];
                 hum = tempHum[0];
                 TbxHum.Text = hum;
                 TbxTemp.Text = temp;
-               
+                if (nowUnixTime - lastUnixTime > 10)//TODO: change "10"
+                {
+                    t.WhenUNIX = nowUnixTime;
+                    t.WhenString = now.ToString("yyyy-MM-dd HH:mm:ss");
+                    t.Temperature = float.Parse(temp);
+                    t.Humidity = float.Parse(hum);
+
+                    DocumentReference docRef = db.Collection(COLLECTION_NAME).Document(t.WhenUNIX.ToString());
+
+
+                    await docRef.SetAsync(t);
+
+                    lastReport = now;
+                }
+                
                 if (true/*checkAlaram(Properties.Settings.Default.minTemp, Properties.Settings.Default.maxTemp,
                     Properties.Settings.Default.maxHumidity,Properties.Settings.Default.minHumidity)*/) 
                 {
@@ -129,7 +153,7 @@ namespace ClimateControll
             DateTime now = DateTime.Now;
 
             SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\alarm.wav");
-            soundAlarm.Play();
+            //soundAlarm.Play();
             if (Properties.Settings.Default.sendMail) { 
            /* MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
             msg.IsBodyHtml = true;

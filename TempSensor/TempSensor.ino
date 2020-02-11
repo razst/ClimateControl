@@ -23,8 +23,8 @@ void loop() {
     return;
   }
 
-  Serial.print(h);
+  Serial.print(h,0);
   Serial.print(",");
-  Serial.println(t);
+  Serial.println(t,0);
 
 }

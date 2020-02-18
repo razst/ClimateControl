@@ -172,5 +172,11 @@ namespace ClimateControll
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            History frm2 = new History();
+            frm2.Show();
+        }
     }
 }

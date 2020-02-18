@@ -26,8 +26,8 @@ namespace ClimateControll
         private string[] tempHum;
         private string temp;
         private string hum;
-        private FirestoreDb db = FirestoreDb.Create("climatehistory-3ff7e");
-        private string COLLECTION_NAME = "ClimateInfo";
+        static public FirestoreDb db = FirestoreDb.Create("climatehistory-3ff7e");
+        static public string COLLECTION_NAME = "ClimateInfo";
         public MainFRM()
         {
             InitializeComponent();

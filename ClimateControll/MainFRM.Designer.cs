@@ -39,6 +39,7 @@
             this.pbRed = new System.Windows.Forms.PictureBox();
             this.pbGreen = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGreen)).BeginInit();
@@ -148,13 +149,17 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(542, 121);
+            this.button2.Location = new System.Drawing.Point(448, 382);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // MainFRM
             // 
@@ -191,6 +196,7 @@
         private System.Windows.Forms.PictureBox pbRed;
         private System.Windows.Forms.PictureBox pbGreen;
         private System.Windows.Forms.Button button2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

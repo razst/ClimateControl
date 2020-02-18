@@ -20,6 +20,7 @@ namespace ClimateControll
     {
         private TempInfo t = new TempInfo();
         private DateTime lastReport = DateTime.Now;
+        private DateTime lastAlarmReport = DateTime.Now;
         private SerialPort mySerialPort;
         private string indata = "";
         private string[] tempHum;
@@ -61,13 +62,12 @@ namespace ClimateControll
                 DateTime now = DateTime.Now;
                 long nowUnixTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
                 long lastUnixTime = ((DateTimeOffset)lastReport).ToUnixTimeSeconds();
-
                 tempHum = indata.Split(',');
                 temp = tempHum[1];
                 hum = tempHum[0];
                 TbxHum.Text = hum;
                 TbxTemp.Text = temp;
-                if (nowUnixTime - lastUnixTime > 10)//TODO: change "10"
+                if (nowUnixTime - lastUnixTime > 60)//TODO: change "10"
                 {
                     t.WhenUNIX = nowUnixTime;
                     t.WhenString = now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -82,10 +82,14 @@ namespace ClimateControll
                     lastReport = now;
                 }
                 
-                if (true/*checkAlaram(Properties.Settings.Default.minTemp, Properties.Settings.Default.maxTemp,
-                    Properties.Settings.Default.maxHumidity,Properties.Settings.Default.minHumidity)*/) 
+                if (checkAlaram(Properties.Settings.Default.minTemp, Properties.Settings.Default.maxTemp,
+                    Properties.Settings.Default.maxHumidity,Properties.Settings.Default.minHumidity)) 
                 {
                     playAlarm();
+                }
+                else 
+                {
+                    stopAlarm();
                 }
             }
 
@@ -151,11 +155,12 @@ namespace ClimateControll
         private void playAlarm()
         {
             DateTime now = DateTime.Now;
-
-            SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\alarm.wav");
-            //soundAlarm.Play();
-            if (Properties.Settings.Default.sendMail) { 
-           /* MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
+            long nowUnixTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
+            long lastAlarmTime = ((DateTimeOffset)lastAlarmReport).ToUnixTimeSeconds();
+            //need to get in the recoses
+            SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
+            soundAlarm.Play();
+            MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
             msg.IsBodyHtml = true;
             SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
             sc.UseDefaultCredentials = false;
@@ -163,9 +168,26 @@ namespace ClimateControll
             sc.Credentials = cre;
             sc.EnableSsl = true;
             sc.Send(msg);
-            MessageBox.Show("massage send");*/
+            if (Properties.Settings.Default.sendMail && nowUnixTime - lastAlarmTime > 600) { 
+            /*MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
+            msg.IsBodyHtml = true;
+            SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
+            sc.UseDefaultCredentials = false;
+            NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");*/
+            sc.Credentials = cre;
+            sc.EnableSsl = true;
+            sc.Send(msg);
+            //MessageBox.Show("massage send");
+            lastAlarmReport = now;
+            }
+            pbGreen.Visible = false;
         }
-            pbGreen.Visible = !pbGreen.Visible;
+        private void stopAlarm()
+        {
+            DateTime now = DateTime.Now;
+            SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
+            soundAlarm.Stop();
+            pbGreen.Visible = true;
         }
 
         private void pbGreen_Click(object sender, EventArgs e)
@@ -177,6 +199,11 @@ namespace ClimateControll
         {
             History frm2 = new History();
             frm2.Show();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
     }
 }

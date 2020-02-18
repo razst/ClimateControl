@@ -126,6 +126,9 @@
       <DependentUpon>SettingsFRM.cs</DependentUpon>
     </Compile>
     <Compile Include="TempInfo.cs" />
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFRM.resx">
       <DependentUpon>MainFRM.cs</DependentUpon>
     </EmbeddedResource>

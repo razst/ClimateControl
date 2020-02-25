@@ -91,7 +91,7 @@ namespace ClimateControll
 
             else
             {
-                long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds();
+                long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
                 long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
                 Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime).Limit(10);
                 QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();

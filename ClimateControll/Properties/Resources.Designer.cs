@@ -61,6 +61,35 @@ namespace ClimateControll.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream alarm {
+            get {
+                return ResourceManager.GetStream("alarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aqua_Ball_Green_icon {
+            get {
+                object obj = ResourceManager.GetObject("Aqua-Ball-Green-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aqua_Ball_Green_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Aqua-Ball-Green-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap green_button {
@@ -76,6 +105,46 @@ namespace ClimateControll.Properties {
         internal static System.Drawing.Bitmap red_button {
             get {
                 object obj = ResourceManager.GetObject("red button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red_button1 {
+            get {
+                object obj = ResourceManager.GetObject("red button1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red_button2 {
+            get {
+                object obj = ResourceManager.GetObject("red button2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settingsImages {
+            get {
+                object obj = ResourceManager.GetObject("settingsImages", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spacemage {
+            get {
+                object obj = ResourceManager.GetObject("spacemage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

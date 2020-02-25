@@ -18,6 +18,8 @@ namespace ClimateControll
 
     public partial class MainFRM : Form
     {
+        
+
         private TempInfo t = new TempInfo();
         private DateTime lastReport = DateTime.Now;
         private DateTime lastAlarmReport = DateTime.Now;
@@ -54,6 +56,7 @@ namespace ClimateControll
             this.Invoke(new EventHandler(displayDataEvent));
 
         }
+        
 
         private async void displayDataEvent(object sender, EventArgs e)
         {
@@ -158,7 +161,8 @@ namespace ClimateControll
             long nowUnixTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
             long lastAlarmTime = ((DateTimeOffset)lastAlarmReport).ToUnixTimeSeconds();
             //need to get in the recoses
-            SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
+            //SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
+            SoundPlayer soundAlarm = new SoundPlayer(ClimateControll.Properties.Resources.alarm);
             soundAlarm.Play();
             MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
             msg.IsBodyHtml = true;
@@ -187,7 +191,7 @@ namespace ClimateControll
             DateTime now = DateTime.Now;
             SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
             soundAlarm.Stop();
-            pbGreen.Visible = true;
+            pbGreen.Visible = false;
         }
 
         private void pbGreen_Click(object sender, EventArgs e)
@@ -202,6 +206,11 @@ namespace ClimateControll
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }

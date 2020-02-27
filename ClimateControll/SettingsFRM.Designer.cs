@@ -75,7 +75,7 @@
             // 
             this.TbxMailAdress.Location = new System.Drawing.Point(103, 18);
             this.TbxMailAdress.Name = "TbxMailAdress";
-            this.TbxMailAdress.Size = new System.Drawing.Size(100, 20);
+            this.TbxMailAdress.Size = new System.Drawing.Size(141, 20);
             this.TbxMailAdress.TabIndex = 23;
             this.TbxMailAdress.TextChanged += new System.EventHandler(this.TbMailAdress_TextChanged);
             // 
@@ -165,7 +165,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(134, 8);
+            this.CancelButton.Location = new System.Drawing.Point(185, 8);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 27;
@@ -206,9 +206,8 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(29, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 302);
+            this.panel1.Size = new System.Drawing.Size(293, 302);
             this.panel1.TabIndex = 30;
-           // this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -219,7 +218,7 @@
             this.panel2.Controls.Add(this.CbMail);
             this.panel2.Location = new System.Drawing.Point(15, 203);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 86);
+            this.panel2.Size = new System.Drawing.Size(262, 86);
             this.panel2.TabIndex = 30;
             // 
             // panel3
@@ -229,14 +228,14 @@
             this.panel3.Controls.Add(this.OKButton);
             this.panel3.Location = new System.Drawing.Point(29, 312);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 39);
+            this.panel3.Size = new System.Drawing.Size(293, 39);
             this.panel3.TabIndex = 31;
             // 
             // SettingsFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 357);
+            this.ClientSize = new System.Drawing.Size(372, 357);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

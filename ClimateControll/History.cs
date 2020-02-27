@@ -23,16 +23,16 @@ namespace ClimateControll
 
         private async void History_Load(object sender, EventArgs e)
         {
-            table.Columns.Add("time", typeof(string));
-            table.Columns.Add("temp", typeof(float));
-            table.Columns.Add("hum", typeof(float));
+            table.Columns.Add("Time", typeof(string));
+            table.Columns.Add("Temp", typeof(float));
+            table.Columns.Add("Hum", typeof(float));
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = table;
             dataGridView1.Sort(dataGridView1.Columns["time"],ListSortDirection.Descending);
 
 
 
-            Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).OrderByDescending("WhenUNIX").Limit(10);
+            Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).OrderByDescending("WhenUNIX").Limit(100);
             QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
             foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
             {
@@ -78,7 +78,7 @@ namespace ClimateControll
 
             if (!timeRD.Checked)
             {
-                Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(10);
+                Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(100);
                 QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
                 foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
                 {
@@ -134,6 +134,11 @@ namespace ClimateControll
                 maxDatePicker.Visible = false;
 
             }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

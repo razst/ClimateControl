@@ -35,14 +35,17 @@
             this.maxTxb = new System.Windows.Forms.TextBox();
             this.OKbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.maxDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.minDatePicker = new System.Windows.Forms.DateTimePicker();
             this.timeRD = new System.Windows.Forms.RadioButton();
             this.clearBtn = new System.Windows.Forms.Button();
             this.tempRB = new System.Windows.Forms.RadioButton();
             this.humRB = new System.Windows.Forms.RadioButton();
-            this.minDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.maxDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -54,13 +57,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(278, 436);
+            this.dataGridView1.Size = new System.Drawing.Size(287, 436);
             this.dataGridView1.TabIndex = 0;
             // 
             // to
             // 
             this.to.AutoSize = true;
-            this.to.Location = new System.Drawing.Point(261, 16);
+            this.to.Location = new System.Drawing.Point(32, 87);
             this.to.Name = "to";
             this.to.Size = new System.Drawing.Size(19, 13);
             this.to.TabIndex = 2;
@@ -69,7 +72,7 @@
             // from
             // 
             this.from.AutoSize = true;
-            this.from.Location = new System.Drawing.Point(143, 20);
+            this.from.Location = new System.Drawing.Point(23, 42);
             this.from.Name = "from";
             this.from.Size = new System.Drawing.Size(33, 13);
             this.from.TabIndex = 3;
@@ -77,21 +80,21 @@
             // 
             // minTxb
             // 
-            this.minTxb.Location = new System.Drawing.Point(146, 36);
+            this.minTxb.Location = new System.Drawing.Point(52, 41);
             this.minTxb.Name = "minTxb";
             this.minTxb.Size = new System.Drawing.Size(40, 20);
             this.minTxb.TabIndex = 4;
             // 
             // maxTxb
             // 
-            this.maxTxb.Location = new System.Drawing.Point(264, 36);
+            this.maxTxb.Location = new System.Drawing.Point(52, 83);
             this.maxTxb.Name = "maxTxb";
             this.maxTxb.Size = new System.Drawing.Size(40, 20);
             this.maxTxb.TabIndex = 5;
             // 
             // OKbutton
             // 
-            this.OKbutton.Location = new System.Drawing.Point(187, 111);
+            this.OKbutton.Location = new System.Drawing.Point(459, 179);
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 23);
             this.OKbutton.TabIndex = 6;
@@ -101,23 +104,33 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maxDatePicker);
-            this.groupBox1.Controls.Add(this.minDatePicker);
             this.groupBox1.Controls.Add(this.timeRD);
-            this.groupBox1.Controls.Add(this.clearBtn);
-            this.groupBox1.Controls.Add(this.OKbutton);
             this.groupBox1.Controls.Add(this.tempRB);
             this.groupBox1.Controls.Add(this.humRB);
-            this.groupBox1.Controls.Add(this.minTxb);
-            this.groupBox1.Controls.Add(this.to);
-            this.groupBox1.Controls.Add(this.from);
-            this.groupBox1.Controls.Add(this.maxTxb);
-            this.groupBox1.Location = new System.Drawing.Point(285, 14);
+            this.groupBox1.Location = new System.Drawing.Point(305, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 152);
+            this.groupBox1.Size = new System.Drawing.Size(138, 125);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter by";
+            // 
+            // maxDatePicker
+            // 
+            this.maxDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.maxDatePicker.Location = new System.Drawing.Point(52, 83);
+            this.maxDatePicker.Name = "maxDatePicker";
+            this.maxDatePicker.Size = new System.Drawing.Size(104, 20);
+            this.maxDatePicker.TabIndex = 16;
+            this.maxDatePicker.Visible = false;
+            // 
+            // minDatePicker
+            // 
+            this.minDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.minDatePicker.Location = new System.Drawing.Point(52, 41);
+            this.minDatePicker.Name = "minDatePicker";
+            this.minDatePicker.Size = new System.Drawing.Size(104, 20);
+            this.minDatePicker.TabIndex = 14;
+            this.minDatePicker.Visible = false;
             // 
             // timeRD
             // 
@@ -133,7 +146,7 @@
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(89, 111);
+            this.clearBtn.Location = new System.Drawing.Point(378, 179);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 23);
             this.clearBtn.TabIndex = 14;
@@ -163,27 +176,40 @@
             this.humRB.Text = "Humidity";
             this.humRB.UseVisualStyleBackColor = true;
             // 
-            // minDatePicker
+            // groupBox2
             // 
-            this.minDatePicker.Location = new System.Drawing.Point(116, 36);
-            this.minDatePicker.Name = "minDatePicker";
-            this.minDatePicker.Size = new System.Drawing.Size(104, 20);
-            this.minDatePicker.TabIndex = 14;
-            this.minDatePicker.Visible = false;
+            this.groupBox2.Controls.Add(this.minDatePicker);
+            this.groupBox2.Controls.Add(this.maxDatePicker);
+            this.groupBox2.Controls.Add(this.to);
+            this.groupBox2.Controls.Add(this.minTxb);
+            this.groupBox2.Controls.Add(this.maxTxb);
+            this.groupBox2.Controls.Add(this.from);
+            this.groupBox2.Location = new System.Drawing.Point(459, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(176, 125);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Values";
             // 
-            // maxDatePicker
+            // btnExit
             // 
-            this.maxDatePicker.Location = new System.Drawing.Point(235, 36);
-            this.maxDatePicker.Name = "maxDatePicker";
-            this.maxDatePicker.Size = new System.Drawing.Size(104, 20);
-            this.maxDatePicker.TabIndex = 16;
-            this.maxDatePicker.Visible = false;
+            this.btnExit.Location = new System.Drawing.Point(560, 415);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 18;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 450);
+            this.ClientSize = new System.Drawing.Size(655, 450);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.OKbutton);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -194,6 +220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -213,5 +241,7 @@
         private System.Windows.Forms.RadioButton timeRD;
         private System.Windows.Forms.DateTimePicker minDatePicker;
         private System.Windows.Forms.DateTimePicker maxDatePicker;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnExit;
     }
 }

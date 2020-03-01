@@ -22,7 +22,7 @@ namespace ClimateControll
 
         private TempInfo t = new TempInfo();
         private DateTime lastReport = DateTime.Now;
-        private DateTime lastAlarmReport = DateTime.Now;
+        private long lastAlarmTime = 0;
         private SerialPort mySerialPort;
         private string indata = "";
         private string[] tempHum;
@@ -37,6 +37,7 @@ namespace ClimateControll
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            stopSerial();
             Application.Exit();
         }
 
@@ -89,6 +90,7 @@ namespace ClimateControll
                     Properties.Settings.Default.maxHumidity,Properties.Settings.Default.minHumidity)) 
                 {
                     playAlarm();
+                    sendEmail();
                 }
                 else 
                 {
@@ -125,10 +127,15 @@ namespace ClimateControll
             mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
 
-        private void stopBut_Click(object sender, EventArgs e)
+        private void stopSerial()
         {
             if (mySerialPort != null)
                 mySerialPort.Close();
+
+        }
+        private void stopBut_Click(object sender, EventArgs e)
+        {
+            stopSerial();
         }
 
         private void ArduConnect_FormClosing(object sender, FormClosingEventArgs e)
@@ -155,43 +162,41 @@ namespace ClimateControll
             }
 
         }
-        private void playAlarm()
+
+        private void sendEmail()
         {
+            // CHECK IF THISIS TIME TO SEND AN EMAIL
             DateTime now = DateTime.Now;
             long nowUnixTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
-            long lastAlarmTime = ((DateTimeOffset)lastAlarmReport).ToUnixTimeSeconds();
-            //need to get in the recoses
-            //SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
-            SoundPlayer soundAlarm = new SoundPlayer(ClimateControll.Properties.Resources.alarm);
-            soundAlarm.Play();
-            MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
-            msg.IsBodyHtml = true;
-            SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
-            sc.UseDefaultCredentials = false;
-            NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");
-            sc.Credentials = cre;
-            sc.EnableSsl = true;
-            sc.Send(msg);
-            if (Properties.Settings.Default.sendMail && nowUnixTime - lastAlarmTime > 600) { 
-            /*MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "satlite", "azaka");
-            msg.IsBodyHtml = true;
-            SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
-            sc.UseDefaultCredentials = false;
-            NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");*/
-            sc.Credentials = cre;
-            sc.EnableSsl = true;
-            sc.Send(msg);
-            //MessageBox.Show("massage send");
-            lastAlarmReport = now;
+            int CurrectTemp = int.Parse(tempHum[1]);
+            int Currecthum = int.Parse(tempHum[0]);
+
+            if (Properties.Settings.Default.sendMail && ((nowUnixTime - lastAlarmTime) > 600))
+            {
+                MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "Climate Control Alarm", "Temp="+CurrectTemp+"\nHumidity="+Currecthum);
+                msg.IsBodyHtml = true;
+                SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
+                sc.UseDefaultCredentials = false;
+                NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");
+                sc.Credentials = cre;
+                sc.EnableSsl = true;
+                sc.Send(msg);
+                lastAlarmTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
             }
-            pbGreen.Visible = false;
+
+        }
+        private void playAlarm()
+        {
+            SoundPlayer soundAlarm = new SoundPlayer(ClimateControll.Properties.Resources.alarm);
+            if(Properties.Settings.Default.turnOnAlert) soundAlarm.Play();
+            pbGreen2.Visible = false;
         }
         private void stopAlarm()
         {
             DateTime now = DateTime.Now;
             SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
             soundAlarm.Stop();
-            pbGreen.Visible = false;
+            pbGreen2.Visible = true;
         }
 
         private void pbGreen_Click(object sender, EventArgs e)

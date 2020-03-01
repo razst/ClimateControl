@@ -184,14 +184,14 @@ namespace ClimateControll
             //MessageBox.Show("massage send");
             lastAlarmReport = now;
             }
-            pbGreen.Visible = false;
+            pbGreens.Visible = false;
         }
         private void stopAlarm()
         {
             DateTime now = DateTime.Now;
             SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
             soundAlarm.Stop();
-            pbGreen.Visible = false;
+            pbGreens.Visible = true;
         }
 
         private void pbGreen_Click(object sender, EventArgs e)

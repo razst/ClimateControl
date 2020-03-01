@@ -39,12 +39,12 @@
             this.desi = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbGreens = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pbGreen = new System.Windows.Forms.PictureBox();
             this.config = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGreens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,15 +148,15 @@
             // 
             this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             // 
-            // pictureBox1
+            // pbGreens
             // 
-            this.pictureBox1.Image = global::ClimateControll.Properties.Resources.Aqua_Ball_Green_icon1;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 165);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 136);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pbGreens.Image = global::ClimateControll.Properties.Resources.Aqua_Ball_Green_icon1;
+            this.pbGreens.Location = new System.Drawing.Point(33, 165);
+            this.pbGreens.Name = "pbGreens";
+            this.pbGreens.Size = new System.Drawing.Size(137, 136);
+            this.pbGreens.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbGreens.TabIndex = 19;
+            this.pbGreens.TabStop = false;
             // 
             // button2
             // 
@@ -198,7 +198,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(703, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbGreens);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pbGreen);
             this.Controls.Add(this.panel1);
@@ -209,7 +209,7 @@
             this.Load += new System.EventHandler(this.MainFRM_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGreens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGreen)).EndInit();
             this.ResumeLayout(false);
 
@@ -230,7 +230,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbGreens;
     }
 }
 

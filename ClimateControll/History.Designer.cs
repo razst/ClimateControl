@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.to = new System.Windows.Forms.Label();
             this.from = new System.Windows.Forms.Label();
@@ -35,12 +36,12 @@
             this.maxTxb = new System.Windows.Forms.TextBox();
             this.OKbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maxDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.minDatePicker = new System.Windows.Forms.DateTimePicker();
             this.timeRD = new System.Windows.Forms.RadioButton();
-            this.clearBtn = new System.Windows.Forms.Button();
             this.tempRB = new System.Windows.Forms.RadioButton();
             this.humRB = new System.Windows.Forms.RadioButton();
+            this.maxDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.minDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -114,24 +115,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter by";
             // 
-            // maxDatePicker
-            // 
-            this.maxDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.maxDatePicker.Location = new System.Drawing.Point(52, 83);
-            this.maxDatePicker.Name = "maxDatePicker";
-            this.maxDatePicker.Size = new System.Drawing.Size(104, 20);
-            this.maxDatePicker.TabIndex = 16;
-            this.maxDatePicker.Visible = false;
-            // 
-            // minDatePicker
-            // 
-            this.minDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.minDatePicker.Location = new System.Drawing.Point(52, 41);
-            this.minDatePicker.Name = "minDatePicker";
-            this.minDatePicker.Size = new System.Drawing.Size(104, 20);
-            this.minDatePicker.TabIndex = 14;
-            this.minDatePicker.Visible = false;
-            // 
             // timeRD
             // 
             this.timeRD.AutoSize = true;
@@ -143,16 +126,6 @@
             this.timeRD.Text = "dates";
             this.timeRD.UseVisualStyleBackColor = true;
             this.timeRD.CheckedChanged += new System.EventHandler(this.timeRD_CheckedChanged);
-            // 
-            // clearBtn
-            // 
-            this.clearBtn.Location = new System.Drawing.Point(378, 179);
-            this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(75, 23);
-            this.clearBtn.TabIndex = 14;
-            this.clearBtn.Text = "clear";
-            this.clearBtn.UseVisualStyleBackColor = true;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // tempRB
             // 
@@ -175,6 +148,34 @@
             this.humRB.TabStop = true;
             this.humRB.Text = "Humidity";
             this.humRB.UseVisualStyleBackColor = true;
+            // 
+            // maxDatePicker
+            // 
+            this.maxDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.maxDatePicker.Location = new System.Drawing.Point(52, 83);
+            this.maxDatePicker.Name = "maxDatePicker";
+            this.maxDatePicker.Size = new System.Drawing.Size(104, 20);
+            this.maxDatePicker.TabIndex = 16;
+            this.maxDatePicker.Visible = false;
+            // 
+            // minDatePicker
+            // 
+            this.minDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.minDatePicker.Location = new System.Drawing.Point(52, 41);
+            this.minDatePicker.Name = "minDatePicker";
+            this.minDatePicker.Size = new System.Drawing.Size(104, 20);
+            this.minDatePicker.TabIndex = 14;
+            this.minDatePicker.Visible = false;
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Location = new System.Drawing.Point(378, 179);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 14;
+            this.clearBtn.Text = "clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // groupBox2
             // 
@@ -213,6 +214,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "History";
             this.Text = "History";

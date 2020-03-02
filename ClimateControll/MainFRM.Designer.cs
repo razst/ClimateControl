@@ -204,6 +204,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.config);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainFRM";
             this.Text = "Climate Controll System";
             this.Load += new System.EventHandler(this.MainFRM_Load);

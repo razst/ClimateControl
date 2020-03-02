@@ -173,7 +173,7 @@ namespace ClimateControll
 
             if (Properties.Settings.Default.sendMail && ((nowUnixTime - lastAlarmTime) > 600))
             {
-                MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "Climate Control Alarm", "Temp="+CurrectTemp+"\nHumidity="+Currecthum);
+                MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "Climate Control Alarm", "Temperature=" + CurrectTemp+"\nHumidity="+Currecthum);
                 msg.IsBodyHtml = true;
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
                 sc.UseDefaultCredentials = false;

@@ -152,4 +152,4 @@ C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateC
 C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csproj.CopyComplete
 C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.exe
 C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.pdb
-C:\Users\pc\source\repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csprojAssemblyReference.cache
+C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csprojAssemblyReference.cache

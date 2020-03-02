@@ -92,6 +92,16 @@ namespace ClimateControll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cc_icon {
+            get {
+                object obj = ResourceManager.GetObject("cc_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap green_button {
             get {
                 object obj = ResourceManager.GetObject("green button", resourceCulture);

@@ -90,7 +90,7 @@
             this.TbxHum.AutoSize = true;
             this.TbxHum.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.TbxHum.Font = new System.Drawing.Font("Microsoft YaHei", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbxHum.Location = new System.Drawing.Point(185, 97);
+            this.TbxHum.Location = new System.Drawing.Point(204, 97);
             this.TbxHum.Name = "TbxHum";
             this.TbxHum.Size = new System.Drawing.Size(91, 86);
             this.TbxHum.TabIndex = 13;
@@ -100,7 +100,7 @@
             // 
             this.TbxTemp.AutoSize = true;
             this.TbxTemp.Font = new System.Drawing.Font("Microsoft YaHei", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbxTemp.Location = new System.Drawing.Point(21, 97);
+            this.TbxTemp.Location = new System.Drawing.Point(53, 97);
             this.TbxTemp.Name = "TbxTemp";
             this.TbxTemp.Size = new System.Drawing.Size(91, 86);
             this.TbxTemp.TabIndex = 14;
@@ -117,14 +117,14 @@
             this.panel1.Controls.Add(this.stopBut);
             this.panel1.Location = new System.Drawing.Point(205, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 278);
+            this.panel1.Size = new System.Drawing.Size(336, 278);
             this.panel1.TabIndex = 15;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(168, 59);
+            this.label1.Location = new System.Drawing.Point(194, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 29);
             this.label1.TabIndex = 16;
@@ -136,9 +136,9 @@
             this.desi.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desi.Location = new System.Drawing.Point(17, 59);
             this.desi.Name = "desi";
-            this.desi.Size = new System.Drawing.Size(133, 29);
+            this.desi.Size = new System.Drawing.Size(171, 29);
             this.desi.TabIndex = 15;
-            this.desi.Text = "Tempture:";
+            this.desi.Text = "Temperature:";
             // 
             // backgroundWorker1
             // 

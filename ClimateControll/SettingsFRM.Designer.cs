@@ -47,6 +47,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.CbTestMode = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -193,6 +194,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.CbTestMode);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tbPortName);
@@ -206,7 +208,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(29, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(293, 302);
+            this.panel1.Size = new System.Drawing.Size(293, 361);
             this.panel1.TabIndex = 30;
             // 
             // panel2
@@ -216,7 +218,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.TbxMailAdress);
             this.panel2.Controls.Add(this.CbMail);
-            this.panel2.Location = new System.Drawing.Point(15, 203);
+            this.panel2.Location = new System.Drawing.Point(14, 270);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 86);
             this.panel2.TabIndex = 30;
@@ -226,16 +228,28 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.CancelButton);
             this.panel3.Controls.Add(this.OKButton);
-            this.panel3.Location = new System.Drawing.Point(29, 312);
+            this.panel3.Location = new System.Drawing.Point(29, 371);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(293, 39);
             this.panel3.TabIndex = 31;
+            // 
+            // CbTestMode
+            // 
+            this.CbTestMode.AutoSize = true;
+            this.CbTestMode.Checked = true;
+            this.CbTestMode.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbTestMode.Location = new System.Drawing.Point(27, 221);
+            this.CbTestMode.Name = "CbTestMode";
+            this.CbTestMode.Size = new System.Drawing.Size(76, 17);
+            this.CbTestMode.TabIndex = 31;
+            this.CbTestMode.Text = "Test mode";
+            this.CbTestMode.UseVisualStyleBackColor = true;
             // 
             // SettingsFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 357);
+            this.ClientSize = new System.Drawing.Size(372, 477);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -272,5 +286,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox CbTestMode;
     }
 }

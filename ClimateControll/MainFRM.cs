@@ -12,6 +12,7 @@ using System.Media;
 using System.Net.Mail;
 using System.Net;
 using Google.Cloud.Firestore;
+using System.Threading;
 
 namespace ClimateControll
 {
@@ -30,6 +31,10 @@ namespace ClimateControll
         private string hum;
         static public FirestoreDb db = FirestoreDb.Create("climatehistory-3ff7e");
         static public string COLLECTION_NAME = "ClimateInfo";
+        private Random rndTemp = new Random();
+        private Random rndHum = new Random();
+        private CancellationTokenSource source = new CancellationTokenSource();
+
         public MainFRM()
         {
             InitializeComponent();
@@ -45,6 +50,12 @@ namespace ClimateControll
         {
             SettingsFRM frm = new SettingsFRM();
             frm.Show();
+        }
+        private async void TestModeData()
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2),source.Token);
+            indata = rndHum.Next(70, 90) + ","+rndTemp.Next(20, 30);
+            this.Invoke(new EventHandler(displayDataEvent));
         }
 
         private void DataReceivedHandler(
@@ -71,6 +82,7 @@ namespace ClimateControll
                 hum = tempHum[0];
                 TbxHum.Text = hum;
                 TbxTemp.Text = temp;
+
                 if (nowUnixTime - lastUnixTime > 60)//TODO: change "10"
                 {
                     t.WhenUNIX = nowUnixTime;
@@ -96,6 +108,10 @@ namespace ClimateControll
                 {
                     stopAlarm();
                 }
+                if (Properties.Settings.Default.TestMode)
+                {
+                    TestModeData();
+                }
             }
 
         }
@@ -103,28 +119,35 @@ namespace ClimateControll
 
         private void startBut_Click(object sender, EventArgs e)
         {
-
-
-            mySerialPort = new SerialPort(Properties.Settings.Default.port);
-
-            mySerialPort.BaudRate = 9600;
-            mySerialPort.Parity = Parity.None;
-            mySerialPort.StopBits = StopBits.One;
-            mySerialPort.DataBits = 8;
-            mySerialPort.Handshake = Handshake.None;
-            mySerialPort.RtsEnable = true;
-
-            try
+            if (!Properties.Settings.Default.TestMode)
             {
-                mySerialPort.Open();
+                mySerialPort = new SerialPort(Properties.Settings.Default.port);
+
+                mySerialPort.BaudRate = 9600;
+                mySerialPort.Parity = Parity.None;
+                mySerialPort.StopBits = StopBits.One;
+                mySerialPort.DataBits = 8;
+                mySerialPort.Handshake = Handshake.None;
+                mySerialPort.RtsEnable = true;
+
+                try
+                {
+                    mySerialPort.Open();
+                }
+                catch
+                {
+                    MessageBox.Show("unable to connect to temp sensor, check COM number in settings", "error");
+                }
+
+
+                mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
             }
-            catch
+            else
             {
-                MessageBox.Show("unable to connect to temp sensor, check COM number in settings", "error");
+                TestModeData();
             }
 
 
-            mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
 
         private void stopSerial()

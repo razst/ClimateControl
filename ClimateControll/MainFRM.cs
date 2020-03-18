@@ -34,7 +34,7 @@ namespace ClimateControll
         private Random rndTemp = new Random();
         private Random rndHum = new Random();
         private CancellationTokenSource source = new CancellationTokenSource();
-
+        private bool stop = false;
         public MainFRM()
         {
             InitializeComponent();
@@ -53,9 +53,12 @@ namespace ClimateControll
         }
         private async void TestModeData()
         {
-            await Task.Delay(TimeSpan.FromSeconds(2),source.Token);
-            indata = rndHum.Next(70, 90) + ","+rndTemp.Next(20, 30);
-            this.Invoke(new EventHandler(displayDataEvent));
+            if (!stop)
+            {
+                await Task.Delay(TimeSpan.FromSeconds(2), source.Token);
+                indata = rndHum.Next(70, 90) + "," + rndTemp.Next(20, 30);
+                this.Invoke(new EventHandler(displayDataEvent));
+            }
         }
 
         private void DataReceivedHandler(
@@ -119,6 +122,7 @@ namespace ClimateControll
 
         private void startBut_Click(object sender, EventArgs e)
         {
+            stop = false;
             if (!Properties.Settings.Default.TestMode)
             {
                 mySerialPort = new SerialPort(Properties.Settings.Default.port);
@@ -159,6 +163,8 @@ namespace ClimateControll
         private void stopBut_Click(object sender, EventArgs e)
         {
             stopSerial();
+            stop = !stop;
+            
         }
 
         private void ArduConnect_FormClosing(object sender, FormClosingEventArgs e)

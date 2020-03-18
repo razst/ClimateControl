@@ -28,6 +28,10 @@ namespace ClimateControll
             CbAlert.Checked = Properties.Settings.Default.turnOnAlert;
             tbPortName.Text = Properties.Settings.Default.port;
             CbTestMode.Checked = Properties.Settings.Default.TestMode;
+            RanMaxHum.Text = ""+Properties.Settings.Default.ranMaxHum;
+            RanMaxTemp.Text =""+ Properties.Settings.Default.ranMaxTemp;
+            RanMinHum.Text = "" + Properties.Settings.Default.ranMinHum;
+            RanMinTemp.Text = "" + Properties.Settings.Default.ranMinTemp;
         }
 
         private void OKButton_Click(object sender, EventArgs e)
@@ -73,8 +77,15 @@ namespace ClimateControll
                 Properties.Settings.Default.sendMail = CbMail.Checked;
                 Properties.Settings.Default.turnOnAlert = CbAlert.Checked;
                 Properties.Settings.Default.port = tbPortName.Text;
-                Properties.Settings.Default.Save();
                 Properties.Settings.Default.TestMode = CbTestMode.Checked;
+                Properties.Settings.Default.ranMaxHum = int.Parse(RanMaxHum.Text);
+                Properties.Settings.Default.ranMaxTemp = int.Parse(RanMaxTemp.Text);
+                Properties.Settings.Default.ranMinHum = int.Parse(RanMinHum.Text);
+                Properties.Settings.Default.ranMinTemp = int.Parse(RanMinTemp.Text);
+
+
+
+                Properties.Settings.Default.Save();
                 MessageBox.Show("all values are saved");
             }
             else if (TbxMailAdress.Text == "" && CbMail.Checked == true)
@@ -106,6 +117,9 @@ namespace ClimateControll
 
         }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

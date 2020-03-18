@@ -3,16 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="minTemp" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="maxTemp" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">25</Value>
     </Setting>
     <Setting Name="minHumidity" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">70</Value>
     </Setting>
     <Setting Name="maxHumidity" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">80</Value>
     </Setting>
     <Setting Name="mailAdrees" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -28,6 +28,18 @@
     </Setting>
     <Setting Name="TestMode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ranMinTemp" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="ranMaxTemp" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="ranMinHum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">70</Value>
+    </Setting>
+    <Setting Name="ranMaxHum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">90</Value>
     </Setting>
   </Settings>
 </SettingsFile>

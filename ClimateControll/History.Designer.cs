@@ -44,6 +44,8 @@
             this.clearBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.limitsCB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,7 +97,7 @@
             // 
             // OKbutton
             // 
-            this.OKbutton.Location = new System.Drawing.Point(459, 179);
+            this.OKbutton.Location = new System.Drawing.Point(494, 250);
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 23);
             this.OKbutton.TabIndex = 6;
@@ -169,7 +171,7 @@
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(378, 179);
+            this.clearBtn.Location = new System.Drawing.Point(368, 250);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 23);
             this.clearBtn.TabIndex = 14;
@@ -202,11 +204,36 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(336, 170);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "items:";
+            // 
+            // limitsCB
+            // 
+            this.limitsCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.limitsCB.FormattingEnabled = true;
+            this.limitsCB.Items.AddRange(new object[] {
+            "20",
+            "100",
+            "200",
+            "no limit"});
+            this.limitsCB.Location = new System.Drawing.Point(376, 167);
+            this.limitsCB.Name = "limitsCB";
+            this.limitsCB.Size = new System.Drawing.Size(121, 21);
+            this.limitsCB.TabIndex = 20;
+            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 450);
+            this.Controls.Add(this.limitsCB);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.OKbutton);
@@ -225,6 +252,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -245,5 +273,7 @@
         private System.Windows.Forms.DateTimePicker maxDatePicker;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox limitsCB;
     }
 }

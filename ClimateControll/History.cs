@@ -59,6 +59,19 @@ namespace ClimateControll
             table.Rows.Clear();
             float min = 0,max = 100;
             string filter = "Humidity";
+            int limit = 100;
+            bool isLimit = true;
+
+            if(limitsCB.SelectedItem.ToString() != "no limit")
+            {
+                limit = int.Parse(limitsCB.SelectedItem.ToString());
+                isLimit = true;
+            }
+            else
+            {
+                isLimit = false;
+            }
+
             if (humRB.Checked)
             {
                 filter = "Humidity";
@@ -75,32 +88,64 @@ namespace ClimateControll
             {
                 max = float.Parse(maxTxb.Text);
             }
-
+            
             if (!timeRD.Checked)
             {
-                Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(100);
-                QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
-                foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
+                if (isLimit)
                 {
-                    TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
+                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(limit);
+                    QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
+                    foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
+                    {
+                        TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                    table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
 
+                    }
+                }
+                else
+                {
+                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max);
+                    QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
+                    foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
+                    {
+                        TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
+
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+
+                    }
                 }
             }
 
             else
             {
-                long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
-                long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
-                Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime).Limit(10);
-                QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
-                foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
+                if (isLimit)
                 {
-                    TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
+                    long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
+                    long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
+                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime).Limit(limit);
+                    QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
+                    foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
+                    {
+                        TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                    table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
 
+                    }
+                }
+                else
+                {
+                    long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
+                    long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
+                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime);
+                    QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
+                    foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
+                    {
+                        TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
+
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+
+                    }
                 }
             }
 

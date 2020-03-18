@@ -45,9 +45,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tbPortName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CbTestMode = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.CbTestMode = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.RanMinTemp = new System.Windows.Forms.TextBox();
+            this.RanMaxTemp = new System.Windows.Forms.TextBox();
+            this.RanMinHum = new System.Windows.Forms.TextBox();
+            this.RanMaxHum = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -194,7 +204,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.CbTestMode);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tbPortName);
@@ -210,6 +219,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 361);
             this.panel1.TabIndex = 30;
+            // 
+            // CbTestMode
+            // 
+            this.CbTestMode.AutoSize = true;
+            this.CbTestMode.Checked = true;
+            this.CbTestMode.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbTestMode.Location = new System.Drawing.Point(396, 18);
+            this.CbTestMode.Name = "CbTestMode";
+            this.CbTestMode.Size = new System.Drawing.Size(76, 17);
+            this.CbTestMode.TabIndex = 31;
+            this.CbTestMode.Text = "Test mode";
+            this.CbTestMode.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -233,23 +254,105 @@
             this.panel3.Size = new System.Drawing.Size(293, 39);
             this.panel3.TabIndex = 31;
             // 
-            // CbTestMode
+            // label7
             // 
-            this.CbTestMode.AutoSize = true;
-            this.CbTestMode.Checked = true;
-            this.CbTestMode.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbTestMode.Location = new System.Drawing.Point(27, 221);
-            this.CbTestMode.Name = "CbTestMode";
-            this.CbTestMode.Size = new System.Drawing.Size(76, 17);
-            this.CbTestMode.TabIndex = 31;
-            this.CbTestMode.Text = "Test mode";
-            this.CbTestMode.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(343, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "temp:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(340, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "humidity:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(430, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(19, 13);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "to:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(430, 149);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(19, 13);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "to:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(343, 81);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "from:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(340, 150);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "from:";
+            // 
+            // RanMinTemp
+            // 
+            this.RanMinTemp.Location = new System.Drawing.Point(379, 81);
+            this.RanMinTemp.Name = "RanMinTemp";
+            this.RanMinTemp.Size = new System.Drawing.Size(45, 20);
+            this.RanMinTemp.TabIndex = 37;
+            // 
+            // RanMaxTemp
+            // 
+            this.RanMaxTemp.Location = new System.Drawing.Point(455, 81);
+            this.RanMaxTemp.Name = "RanMaxTemp";
+            this.RanMaxTemp.Size = new System.Drawing.Size(45, 20);
+            this.RanMaxTemp.TabIndex = 38;
+            // 
+            // RanMinHum
+            // 
+            this.RanMinHum.Location = new System.Drawing.Point(379, 143);
+            this.RanMinHum.Name = "RanMinHum";
+            this.RanMinHum.Size = new System.Drawing.Size(45, 20);
+            this.RanMinHum.TabIndex = 39;
+            // 
+            // RanMaxHum
+            // 
+            this.RanMaxHum.Location = new System.Drawing.Point(455, 142);
+            this.RanMaxHum.Name = "RanMaxHum";
+            this.RanMaxHum.Size = new System.Drawing.Size(45, 20);
+            this.RanMaxHum.TabIndex = 40;
             // 
             // SettingsFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 477);
+            this.ClientSize = new System.Drawing.Size(552, 477);
+            this.Controls.Add(this.RanMaxHum);
+            this.Controls.Add(this.RanMinHum);
+            this.Controls.Add(this.RanMaxTemp);
+            this.Controls.Add(this.RanMinTemp);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.CbTestMode);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -262,6 +365,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -287,5 +391,15 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox CbTestMode;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox RanMinTemp;
+        private System.Windows.Forms.TextBox RanMaxTemp;
+        private System.Windows.Forms.TextBox RanMinHum;
+        private System.Windows.Forms.TextBox RanMaxHum;
     }
 }

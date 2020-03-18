@@ -25,7 +25,7 @@ namespace ClimateControll.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
         public int minTemp {
             get {
                 return ((int)(this["minTemp"]));
@@ -37,7 +37,7 @@ namespace ClimateControll.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
         public int maxTemp {
             get {
                 return ((int)(this["maxTemp"]));
@@ -49,7 +49,7 @@ namespace ClimateControll.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("70")]
         public int minHumidity {
             get {
                 return ((int)(this["minHumidity"]));
@@ -61,7 +61,7 @@ namespace ClimateControll.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("80")]
         public int maxHumidity {
             get {
                 return ((int)(this["maxHumidity"]));
@@ -128,6 +128,54 @@ namespace ClimateControll.Properties {
             }
             set {
                 this["TestMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int ranMinTemp {
+            get {
+                return ((int)(this["ranMinTemp"]));
+            }
+            set {
+                this["ranMinTemp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int ranMaxTemp {
+            get {
+                return ((int)(this["ranMaxTemp"]));
+            }
+            set {
+                this["ranMaxTemp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("70")]
+        public int ranMinHum {
+            get {
+                return ((int)(this["ranMinHum"]));
+            }
+            set {
+                this["ranMinHum"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("90")]
+        public int ranMaxHum {
+            get {
+                return ((int)(this["ranMaxHum"]));
+            }
+            set {
+                this["ranMaxHum"] = value;
             }
         }
     }

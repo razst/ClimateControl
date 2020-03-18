@@ -163,7 +163,7 @@ namespace ClimateControll
         private void stopBut_Click(object sender, EventArgs e)
         {
             stopSerial();
-            stop = !stop;
+            stop = true;
             
         }
 

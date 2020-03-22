@@ -56,7 +56,7 @@ namespace ClimateControll
             if (!stop)
             {
                 await Task.Delay(TimeSpan.FromSeconds(2), source.Token);
-                indata = rndHum.Next(70, 90) + "," + rndTemp.Next(20, 30);
+                indata = rndHum.Next(Properties.Settings.Default.ranMinHum, Properties.Settings.Default.ranMaxHum) + "," + rndTemp.Next(Properties.Settings.Default.ranMinTemp, Properties.Settings.Default.ranMaxTemp);
                 this.Invoke(new EventHandler(displayDataEvent));
             }
         }

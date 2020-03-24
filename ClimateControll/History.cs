@@ -24,21 +24,24 @@ namespace ClimateControll
         }
         private DataTable table = new DataTable();
         private List<string> x = new List<string>();
-        private List<float> y = new List<float>();
+        private List<float> yTemp = new List<float>();
+        private List<float> yHum = new List<float>();
 
         private async void History_Load(object sender, EventArgs e)
         {
+            limitsCB.SelectedItem = "100";
+            chart1.Series.Clear();
+            chart1.Series.Add("Tempeture");
+            chart1.Series.Add("Humiditiy");
             table.Columns.Add("Time", typeof(string));
             table.Columns.Add("Temp", typeof(float));
             table.Columns.Add("Hum", typeof(float));
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = table;
             dataGridView1.Sort(dataGridView1.Columns["time"],ListSortDirection.Descending);
+            chart1.Series[0].ChartType = SeriesChartType.FastLine;
+            chart1.Series[1].ChartType = SeriesChartType.FastLine;
 
-
-            var Series = new Series("temp");
-            Series.ChartType = SeriesChartType.FastLine;
-            chart1.Series[0] = Series;
             //chart1.Series[0].Points.DataBindXY(x, y);
 
 
@@ -50,8 +53,13 @@ namespace ClimateControll
                 TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
                 table.Rows.Add(temp.WhenString, temp.Temperature,temp.Humidity);
+                x.Add(temp.WhenString);
+                yTemp.Add(temp.Temperature);
+                yHum.Add(temp.Humidity);
 
             }
+            chart1.Series[0].Points.DataBindXY(x, yTemp);
+            chart1.Series[1].Points.DataBindXY(x, yHum);
             dataGridView1.AutoResizeColumns();
 
 
@@ -63,12 +71,13 @@ namespace ClimateControll
             table.Rows.Clear();
             float min = 0,max = 100;
             string filter = "Humidity";
-            string graph = "";
             int limit = 100;
             bool isLimit = true;
             x.Clear();
-            y.Clear();
-            chart1.Series[0].Points.DataBindXY(x, y);
+            yTemp.Clear();
+            yHum.Clear();
+            chart1.Series[0].Points.DataBindXY(x, yTemp);
+            chart1.Series[1].Points.DataBindXY(x, yHum);
 
             if (limitsCB.SelectedItem.ToString() != "no limit")
             {
@@ -96,24 +105,14 @@ namespace ClimateControll
             {
                 max = float.Parse(maxTxb.Text);
             }
-            if (HumGraRD.Checked)
-            {
-                graph = "Humidity";
-            }
-            if (TempGraRD.Checked)
-            {
-                graph = "Temperature";
-            }
 
-            
-           
-            
-            if (GraphCB.Checked)
+
+
+
+            if (timeRD.Checked)
             {
                 if (isLimit)
                 {
-                    dataGridView1.Visible = false;
-                    chart1.Visible = true;
                     long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
                     long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
                     Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime).Limit(limit);
@@ -122,23 +121,19 @@ namespace ClimateControll
                     {
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
                         x.Add(temp.WhenString);
-                        if (graph == "Humidity")
-                        {
-                            y.Add(temp.Humidity);
-                        }
-                        else
-                        {
-                            y.Add(temp.Temperature);
-                        }
+                        yTemp.Add(temp.Temperature);
+                        yHum.Add(temp.Humidity);
 
                     }
-                    chart1.Series[0].Points.DataBindXY(x, y);
+                    chart1.Series[0].Points.DataBindXY(x, yTemp);
+                    chart1.Series[1].Points.DataBindXY(x, yHum);
+
                 }
                 else
                 {
-                    dataGridView1.Visible = false;
-                    chart1.Visible = true;
+
                     long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
                     long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
                     Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime);
@@ -147,90 +142,57 @@ namespace ClimateControll
                     {
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
                         x.Add(temp.WhenString);
-                        if (graph == "Humidity")
-                        {
-                            y.Add(temp.Humidity);
-                        }
-                        else
-                        {
-                            y.Add(temp.Temperature);
-                        }
+                        yTemp.Add(temp.Temperature);
+                        yHum.Add(temp.Humidity);
+
 
                     }
-                    chart1.Series[0].Points.DataBindXY(x, y);
+                    chart1.Series[0].Points.DataBindXY(x, yTemp);
+                    chart1.Series[1].Points.DataBindXY(x, yHum);
                 }
             }
-
-
-
-
-            if (!GraphCB.Checked)
+            else
             {
-
-
-                if (!timeRD.Checked)
+                if (isLimit)
                 {
-                    if (isLimit)
+                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(limit);
+                    QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
+                    foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
                     {
-                        Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(limit);
-                        QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
-                        foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
-                        {
-                            TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
+                        TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                            table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+                        x.Add(temp.WhenString);
+                        yTemp.Add(temp.Temperature);
+                        yHum.Add(temp.Humidity);
 
-                        }
                     }
-                    else
-                    {
-                        Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max);
-                        QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
-                        foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
-                        {
-                            TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
+                    chart1.Series[0].Points.DataBindXY(x, yTemp);
+                    chart1.Series[1].Points.DataBindXY(x, yHum);
 
-                            table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
-
-                        }
-                    }
                 }
-
                 else
                 {
-                    if (isLimit)
+
+                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max);
+                    QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
+                    foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
                     {
-                        long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
-                        long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
-                        Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime).Limit(limit);
-                        QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
-                        foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
-                        {
-                            TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
+                        TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                            table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+                        x.Add(temp.WhenString);
+                        yTemp.Add(temp.Temperature);
+                        yHum.Add(temp.Humidity);
 
-                        }
+
                     }
-                    else
-                    {
-                        long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
-                        long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
-                        Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime);
-                        QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
-                        foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
-                        {
-                            TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
-
-                            table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
-
-                        }
-                    }
+                    chart1.Series[0].Points.DataBindXY(x, yTemp);
+                    chart1.Series[1].Points.DataBindXY(x, yHum);
                 }
             }
-
-
 
 
         }
@@ -266,35 +228,6 @@ namespace ClimateControll
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void TempGraRD_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Graph_CheckedChanged(object sender, EventArgs e)
-        {
-            if (GraphCB.Checked)
-            {
-                GraphGB.Visible = true;
-                humRB.Visible = false;
-                tempRB.Visible = false;
-                timeRD.Checked = true;
-                MainGB.Visible = false;
-                dataGridView1.Visible = !true;
-                chart1.Visible = !false;
-            }
-            else
-            {
-                GraphGB.Visible = !true;
-                humRB.Visible = !false;
-                tempRB.Visible = !false;
-                MainGB.Visible = !false;
-                dataGridView1.Visible = true;
-                chart1.Visible = false;
-
-            }
         }
     }
 }

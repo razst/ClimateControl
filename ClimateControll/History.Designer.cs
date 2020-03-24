@@ -50,15 +50,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.limitsCB = new System.Windows.Forms.ComboBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.GraphCB = new System.Windows.Forms.CheckBox();
-            this.GraphGB = new System.Windows.Forms.GroupBox();
-            this.TempGraRD = new System.Windows.Forms.RadioButton();
-            this.HumGraRD = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.MainGB.SuspendLayout();
             this.VarGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.GraphGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -237,6 +232,7 @@
             this.limitsCB.Name = "limitsCB";
             this.limitsCB.Size = new System.Drawing.Size(121, 21);
             this.limitsCB.TabIndex = 20;
+//            this.limitsCB.SelectedIndexChanged += new System.EventHandler(this.limitsCB_SelectedIndexChanged);
             // 
             // chart1
             // 
@@ -244,70 +240,21 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(-1, 2);
+            this.chart1.Location = new System.Drawing.Point(1, 444);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 436);
+            this.chart1.Size = new System.Drawing.Size(1472, 327);
             this.chart1.TabIndex = 21;
             this.chart1.Text = "chart1";
-            this.chart1.Visible = false;
-            // 
-            // GraphCB
-            // 
-            this.GraphCB.AutoSize = true;
-            this.GraphCB.Location = new System.Drawing.Point(305, 2);
-            this.GraphCB.Name = "GraphCB";
-            this.GraphCB.Size = new System.Drawing.Size(53, 17);
-            this.GraphCB.TabIndex = 22;
-            this.GraphCB.Text = "graph";
-            this.GraphCB.UseVisualStyleBackColor = true;
-            this.GraphCB.CheckedChanged += new System.EventHandler(this.Graph_CheckedChanged);
-            // 
-            // GraphGB
-            // 
-            this.GraphGB.Controls.Add(this.TempGraRD);
-            this.GraphGB.Controls.Add(this.HumGraRD);
-            this.GraphGB.Location = new System.Drawing.Point(305, 27);
-            this.GraphGB.Name = "GraphGB";
-            this.GraphGB.Size = new System.Drawing.Size(138, 83);
-            this.GraphGB.TabIndex = 23;
-            this.GraphGB.TabStop = false;
-            this.GraphGB.Text = "Show";
-            this.GraphGB.Visible = false;
-            // 
-            // TempGraRD
-            // 
-            this.TempGraRD.AutoSize = true;
-            this.TempGraRD.Location = new System.Drawing.Point(27, 60);
-            this.TempGraRD.Name = "TempGraRD";
-            this.TempGraRD.Size = new System.Drawing.Size(76, 17);
-            this.TempGraRD.TabIndex = 1;
-            this.TempGraRD.Text = "Tempeture";
-            this.TempGraRD.UseVisualStyleBackColor = true;
-            this.TempGraRD.CheckedChanged += new System.EventHandler(this.TempGraRD_CheckedChanged);
-            // 
-            // HumGraRD
-            // 
-            this.HumGraRD.AutoSize = true;
-            this.HumGraRD.Checked = true;
-            this.HumGraRD.Location = new System.Drawing.Point(27, 19);
-            this.HumGraRD.Name = "HumGraRD";
-            this.HumGraRD.Size = new System.Drawing.Size(65, 17);
-            this.HumGraRD.TabIndex = 0;
-            this.HumGraRD.TabStop = true;
-            this.HumGraRD.Text = "Humidity";
-            this.HumGraRD.UseVisualStyleBackColor = true;
             // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 450);
-            this.Controls.Add(this.GraphGB);
-            this.Controls.Add(this.GraphCB);
+            this.ClientSize = new System.Drawing.Size(1473, 769);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.limitsCB);
             this.Controls.Add(this.label1);
@@ -329,8 +276,6 @@
             this.VarGB.ResumeLayout(false);
             this.VarGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.GraphGB.ResumeLayout(false);
-            this.GraphGB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,9 +301,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox limitsCB;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.CheckBox GraphCB;
-        private System.Windows.Forms.GroupBox GraphGB;
-        private System.Windows.Forms.RadioButton TempGraRD;
-        private System.Windows.Forms.RadioButton HumGraRD;
     }
 }

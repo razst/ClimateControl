@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.to = new System.Windows.Forms.Label();
@@ -65,7 +64,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(287, 436);
+            this.dataGridView1.Size = new System.Drawing.Size(320, 436);
             this.dataGridView1.TabIndex = 0;
             // 
             // to
@@ -102,7 +101,7 @@
             // 
             // OKbutton
             // 
-            this.OKbutton.Location = new System.Drawing.Point(494, 250);
+            this.OKbutton.Location = new System.Drawing.Point(189, 650);
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 23);
             this.OKbutton.TabIndex = 6;
@@ -115,7 +114,7 @@
             this.MainGB.Controls.Add(this.timeRD);
             this.MainGB.Controls.Add(this.tempRB);
             this.MainGB.Controls.Add(this.humRB);
-            this.MainGB.Location = new System.Drawing.Point(305, 28);
+            this.MainGB.Location = new System.Drawing.Point(1, 447);
             this.MainGB.Name = "MainGB";
             this.MainGB.Size = new System.Drawing.Size(138, 125);
             this.MainGB.TabIndex = 13;
@@ -176,13 +175,12 @@
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(368, 250);
+            this.clearBtn.Location = new System.Drawing.Point(25, 650);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 23);
             this.clearBtn.TabIndex = 14;
             this.clearBtn.Text = "clear";
             this.clearBtn.UseVisualStyleBackColor = true;
-            this.clearBtn.Visible = false;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // VarGB
@@ -193,7 +191,7 @@
             this.VarGB.Controls.Add(this.minTxb);
             this.VarGB.Controls.Add(this.maxTxb);
             this.VarGB.Controls.Add(this.from);
-            this.VarGB.Location = new System.Drawing.Point(459, 28);
+            this.VarGB.Location = new System.Drawing.Point(145, 447);
             this.VarGB.Name = "VarGB";
             this.VarGB.Size = new System.Drawing.Size(176, 125);
             this.VarGB.TabIndex = 17;
@@ -202,7 +200,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(560, 415);
+            this.btnExit.Location = new System.Drawing.Point(15, 734);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 18;
@@ -213,11 +211,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 170);
+            this.label1.Location = new System.Drawing.Point(12, 601);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "items:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // limitsCB
             // 
@@ -228,11 +227,10 @@
             "100",
             "200",
             "no limit"});
-            this.limitsCB.Location = new System.Drawing.Point(376, 167);
+            this.limitsCB.Location = new System.Drawing.Point(64, 598);
             this.limitsCB.Name = "limitsCB";
             this.limitsCB.Size = new System.Drawing.Size(121, 21);
             this.limitsCB.TabIndex = 20;
-//            this.limitsCB.SelectedIndexChanged += new System.EventHandler(this.limitsCB_SelectedIndexChanged);
             // 
             // chart1
             // 
@@ -240,13 +238,9 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(1, 444);
+            this.chart1.Location = new System.Drawing.Point(355, 2);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1472, 327);
+            this.chart1.Size = new System.Drawing.Size(1092, 772);
             this.chart1.TabIndex = 21;
             this.chart1.Text = "chart1";
             // 

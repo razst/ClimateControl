@@ -16,6 +16,7 @@ using System.Configuration;
 
 namespace ClimateControll
 {
+
     public partial class History : Form
     {
         public History()
@@ -23,6 +24,7 @@ namespace ClimateControll
             InitializeComponent();
         }
         private DataTable table = new DataTable();
+        private DataTable SortTable = new DataTable();
         private List<string> x = new List<string>();
         private List<float> yTemp = new List<float>();
         private List<float> yHum = new List<float>();
@@ -30,7 +32,6 @@ namespace ClimateControll
         private async void History_Load(object sender, EventArgs e)
         {
             limitsCB.SelectedItem = "100";
-            chart1.Series.Clear();
             chart1.Series.Add("Tempeture");
             chart1.Series.Add("Humiditiy");
             table.Columns.Add("Time", typeof(string));
@@ -53,11 +54,16 @@ namespace ClimateControll
                 TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
                 table.Rows.Add(temp.WhenString, temp.Temperature,temp.Humidity);
-                x.Add(temp.WhenString);
-                yTemp.Add(temp.Temperature);
-                yHum.Add(temp.Humidity);
 
             }
+            DataView dv = table.DefaultView;
+            dv.Sort = "Time";
+            SortTable = dv.ToTable();
+            x = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("Time")).ToList();
+            yTemp = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Temp")).ToList();
+            yHum = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
+
+
             chart1.Series[0].Points.DataBindXY(x, yTemp);
             chart1.Series[1].Points.DataBindXY(x, yHum);
             dataGridView1.AutoResizeColumns();
@@ -122,11 +128,15 @@ namespace ClimateControll
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
                         table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
-                        x.Add(temp.WhenString);
-                        yTemp.Add(temp.Temperature);
-                        yHum.Add(temp.Humidity);
+
 
                     }
+                    DataView dv = table.DefaultView;
+                    dv.Sort = "Time";
+                    SortTable = dv.ToTable();
+                    x = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("Time")).ToList();
+                    yTemp = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Temp")).ToList();
+                    yHum = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
                     chart1.Series[0].Points.DataBindXY(x, yTemp);
                     chart1.Series[1].Points.DataBindXY(x, yHum);
 
@@ -143,12 +153,14 @@ namespace ClimateControll
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
                         table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
-                        x.Add(temp.WhenString);
-                        yTemp.Add(temp.Temperature);
-                        yHum.Add(temp.Humidity);
-
 
                     }
+                    DataView dv = table.DefaultView;
+                    dv.Sort = "Time";
+                    SortTable = dv.ToTable();
+                    x = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("Time")).ToList();
+                    yTemp = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Temp")).ToList();
+                    yHum = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
                     chart1.Series[0].Points.DataBindXY(x, yTemp);
                     chart1.Series[1].Points.DataBindXY(x, yHum);
                 }
@@ -164,11 +176,14 @@ namespace ClimateControll
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
                         table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
-                        x.Add(temp.WhenString);
-                        yTemp.Add(temp.Temperature);
-                        yHum.Add(temp.Humidity);
 
                     }
+                    DataView dv = table.DefaultView;
+                    dv.Sort = "Time";
+                    SortTable = dv.ToTable();
+                    x = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("Time")).ToList();
+                    yTemp = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Temp")).ToList();
+                    yHum = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
                     chart1.Series[0].Points.DataBindXY(x, yTemp);
                     chart1.Series[1].Points.DataBindXY(x, yHum);
 
@@ -183,12 +198,16 @@ namespace ClimateControll
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
                         table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
-                        x.Add(temp.WhenString);
-                        yTemp.Add(temp.Temperature);
-                        yHum.Add(temp.Humidity);
+
 
 
                     }
+                    DataView dv = table.DefaultView;
+                    dv.Sort = "Time";
+                    SortTable = dv.ToTable();
+                    x = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("Time")).ToList();
+                    yTemp = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Temp")).ToList();
+                    yHum = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
                     chart1.Series[0].Points.DataBindXY(x, yTemp);
                     chart1.Series[1].Points.DataBindXY(x, yHum);
                 }
@@ -228,6 +247,11 @@ namespace ClimateControll
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

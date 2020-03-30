@@ -16,9 +16,10 @@ namespace ClimateControll
         [STAThread]
         static void Main()
         {
+            //start code here
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //star code here
             Application.Run(new MainFRM());
         }
     }

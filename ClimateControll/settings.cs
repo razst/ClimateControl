@@ -13,6 +13,44 @@ namespace ClimateControll
     internal class settings
     {
         [FirestoreProperty]
-        public string WhenString { get; set; }
+        public string mailAdress { get; set; }
+        [FirestoreProperty]
+        public string port { get; set; }
+
+        [FirestoreProperty]
+        public int maxHum { get; set; }
+
+        [FirestoreProperty]
+        public int maxTemp { get; set; }
+
+        [FirestoreProperty]
+        public int minHum { get; set; }
+
+        [FirestoreProperty]
+        public int minTemp { get; set; }
+
+        [FirestoreProperty]
+        public int ranMaxHum { get; set; }
+
+        [FirestoreProperty]
+        public int ranMaxTemp { get; set; }
+        [FirestoreProperty]
+        public int ranMinHum { get; set; }
+
+        [FirestoreProperty]
+        public int ranMinTemp { get; set; }
+
+        [FirestoreProperty]
+        public bool sendMail { get; set; }
+
+        [FirestoreProperty]
+        public bool testrMode { get; set; }
+
+        [FirestoreProperty]
+        public bool turnOnAlert { get; set; }
+
+
+
+
     }
 }

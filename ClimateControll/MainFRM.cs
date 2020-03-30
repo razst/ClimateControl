@@ -19,7 +19,7 @@ namespace ClimateControll
 
     public partial class MainFRM : Form
     {
-        
+
 
         private TempInfo t = new TempInfo();
         private DateTime lastReport = DateTime.Now;
@@ -38,6 +38,7 @@ namespace ClimateControll
         public MainFRM()
         {
             InitializeComponent();
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -175,7 +176,8 @@ namespace ClimateControll
 
         private void MainFRM_Load(object sender, EventArgs e)
         {
-
+            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
+           
         }
         private Boolean checkAlaram(int minTemp, int maxTemp, int maxHum, int minHum)
         {
@@ -248,5 +250,11 @@ namespace ClimateControll
         {
 
         }
+        private void OnApplicationExit(object sender, EventArgs e)
+        {
+            //end of app code here
+
+        }
+
     }
 }

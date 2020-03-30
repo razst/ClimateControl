@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Cloud.Firestore;
+
 
 namespace ClimateControll
 {
@@ -16,6 +18,7 @@ namespace ClimateControll
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //star code here
             Application.Run(new MainFRM());
         }
     }

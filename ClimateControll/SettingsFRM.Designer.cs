@@ -174,16 +174,6 @@
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
-            // CancelButton
-            // 
-            this.CancelButton.Location = new System.Drawing.Point(185, 8);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 27;
-            this.CancelButton.Text = "cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -247,7 +237,6 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.CancelButton);
             this.panel3.Controls.Add(this.OKButton);
             this.panel3.Location = new System.Drawing.Point(29, 371);
             this.panel3.Name = "panel3";
@@ -384,7 +373,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button OKButton;
-        private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbPortName;
         private System.Windows.Forms.Panel panel1;

@@ -13,5 +13,13 @@ namespace climate_IO
         {
 
         }
+
+        //Response.Redirect("HistoryPage.aspx");
+
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

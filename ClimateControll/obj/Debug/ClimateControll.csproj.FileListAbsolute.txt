@@ -153,3 +153,11 @@ C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateC
 C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.exe
 C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.pdb
 C:\Users\pc\Source\Repos\razst\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csprojAssemblyReference.cache
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csprojAssemblyReference.cache
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.History.resources
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.MainFRM.resources
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.Properties.Resources.resources
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.SettingsFRM.resources
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.csproj.GenerateResource.cache
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.exe
+C:\Users\ילדי סגמן\Documents\GitHub\ClimateControl\ClimateControll\obj\Debug\ClimateControll.pdb

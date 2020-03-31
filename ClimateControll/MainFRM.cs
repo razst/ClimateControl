@@ -22,6 +22,7 @@ namespace ClimateControll
 
 
         private TempInfo t = new TempInfo();
+        private settings s = new settings();
         private DateTime lastReport = DateTime.Now;
         private long lastAlarmTime = 0;
         private SerialPort mySerialPort;
@@ -250,10 +251,24 @@ namespace ClimateControll
         {
 
         }
-        private void OnApplicationExit(object sender, EventArgs e)
+        private async void OnApplicationExit(object sender, EventArgs e)
         {
             //end of app code here
-
+            s.maxTemp = Properties.Settings.Default.maxTemp;
+            s.minTemp = Properties.Settings.Default.minTemp;
+            s.maxHum = Properties.Settings.Default.maxHumidity;
+            s.minHum = Properties.Settings.Default.minHumidity;
+            s.mailAdress = Properties.Settings.Default.mailAdrees;
+            s.sendMail = Properties.Settings.Default.sendMail;
+            s.turnOnAlert = Properties.Settings.Default.turnOnAlert;
+            s.port = Properties.Settings.Default.port;
+            s.testMode = Properties.Settings.Default.TestMode;
+            s.ranMaxHum = Properties.Settings.Default.ranMaxHum;
+            s.ranMaxTemp = Properties.Settings.Default.ranMaxTemp;
+            s.ranMinHum = Properties.Settings.Default.ranMinHum;
+            s.ranMinTemp = Properties.Settings.Default.ranMinTemp;
+            DocumentReference docRef = db.Collection("settings").Document("settings_data");
+            await docRef.SetAsync(s);
         }
 
     }

@@ -44,7 +44,7 @@ namespace ClimateControll
         public bool sendMail { get; set; }
 
         [FirestoreProperty]
-        public bool testrMode { get; set; }
+        public bool testMode { get; set; }
 
         [FirestoreProperty]
         public bool turnOnAlert { get; set; }

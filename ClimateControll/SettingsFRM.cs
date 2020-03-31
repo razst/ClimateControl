@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Cloud.Firestore;
+
 
 namespace ClimateControll
 {
@@ -16,6 +18,7 @@ namespace ClimateControll
         {
             InitializeComponent();
         }
+        private settings s = new settings();
 
         private void SettingsFRM_Load(object sender, EventArgs e)
         {
@@ -34,7 +37,7 @@ namespace ClimateControll
             RanMinTemp.Text = "" + Properties.Settings.Default.ranMinTemp;
         }
 
-        private void OKButton_Click(object sender, EventArgs e)
+        private async void OKButton_Click(object sender, EventArgs e)
         {
             bool currect = true;
             int cheak;
@@ -86,6 +89,25 @@ namespace ClimateControll
 
 
                 Properties.Settings.Default.Save();
+
+
+                s.maxTemp = Properties.Settings.Default.maxTemp;
+                s.minTemp = Properties.Settings.Default.minTemp;
+                s.maxHum = Properties.Settings.Default.maxHumidity;
+                s.minHum = Properties.Settings.Default.minHumidity;
+                s.mailAdress = Properties.Settings.Default.mailAdrees;
+                s.sendMail = Properties.Settings.Default.sendMail;
+                s.turnOnAlert = Properties.Settings.Default.turnOnAlert;
+                s.port = Properties.Settings.Default.port;
+                s.testMode = Properties.Settings.Default.TestMode;
+                s.ranMaxHum = Properties.Settings.Default.ranMaxHum;
+                s.ranMaxTemp = Properties.Settings.Default.ranMaxTemp;
+                s.ranMinHum = Properties.Settings.Default.ranMinHum;
+                s.ranMinTemp = Properties.Settings.Default.ranMinTemp;
+                DocumentReference docRef = MainFRM.db.Collection("settings").Document("settings_data");
+                await docRef.SetAsync(s);
+
+
                 MessageBox.Show("all values are saved");
             }
             else if (TbxMailAdress.Text == "" && CbMail.Checked == true)

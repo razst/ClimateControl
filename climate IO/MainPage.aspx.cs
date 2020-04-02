@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Google.Cloud.Firestore;
+
 
 namespace climate_IO
 {
@@ -13,13 +15,15 @@ namespace climate_IO
         {
 
         }
-
+        //<button runat="server" onServerClick ="Button2_Click" >
         //Response.Redirect("HistoryPage.aspx");
 
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("HistoryPage.aspx");
         }
+
+
     }
 }

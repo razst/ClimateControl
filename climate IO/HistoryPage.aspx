@@ -7,6 +7,22 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+
+        <script type="text/javascript">
+            window.onload = function () {
+                var rbl = document.getElementById("<%=filterRBbox.ClientID %>");
+                var radio = rbl.getElementsByTagName("INPUT");
+                for (var i = 0; i < radio.length; i++) {
+                    radio[i].onchange = function () {
+                        ShowHideValues(this.value);
+                    };
+                }
+            };
+</script>
 <head runat="server">
         <meta charset='utf-8'/>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
@@ -33,18 +49,19 @@
             } else {
                 humidityValues.style.display = "none";
             }
-            if (valueType == 'Temperature') {
+            if (valueType == 'Tempeture') {
                 temperatureValues.style.display = "block";
             } else {
                 temperatureValues.style.display = "none";
             }
-            if (valueType == 'Date') {
+            if (valueType == 'dates') {
                 dateValues.style.display = "block";
             } else {
                 dateValues.style.display = "none";
             }
         }
     </script>
+
 </head>
 <body>
             <form id="historyPageFRM" runat="server">
@@ -66,7 +83,7 @@
         </ul>
         <div class="row ">
             <div class="col-3 container">
-                <div style="width: 12%; height: 400px; overflow: scroll" class="row ">
+                <div style="width: 30%; height: 400px; overflow: scroll" class="row ">
                     <asp:GridView ID="dataGridView1" runat="server" AllowSorting="True" Height="445px" style="margin-top: 6px" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="174px" >
                     <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                     <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />

@@ -51,6 +51,42 @@ namespace climate_IO
         protected global::System.Web.UI.WebControls.RadioButtonList filterRBbox;
 
         /// <summary>
+        /// minHumTxb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox minHumTxb;
+
+        /// <summary>
+        /// maxHumTxb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox maxHumTxb;
+
+        /// <summary>
+        /// minTempTxb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox minTempTxb;
+
+        /// <summary>
+        /// maxTempTxb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox maxTempTxb;
+
+        /// <summary>
         /// minDatePicker control.
         /// </summary>
         /// <remarks>

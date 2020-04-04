@@ -62,6 +62,8 @@
         .value-dicoration {
             font-size: xx-large;
             font-weight: bold;
+            top: 0px;
+            left: 0px;
         }
 
         .py-10{
@@ -76,16 +78,17 @@
     <div class="container-fluid">
         
             <ul class="nav  bg-white mb-0 pb-5">
-                <li class="nav-item">
-                    <a class="nav-link text-dark font-italic">
-                        <i class="fa fa-cog mr-3 text-primary fa-fw"></i>
-                        Setting
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a runat="server" class="nav-link text-dark font-italic" onserverclick="Button2_Click" >
                         <i class="fa fa-history mr-3 text-primary fa-fw"></i>
                         History
+                    </a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link text-dark font-italic">
+                        <i class="fa fa-cog mr-3 text-primary fa-fw"></i>
+                        Setting
                     </a>
                 </li>
             </ul>
@@ -105,7 +108,7 @@
                                         Temperature:
                                     </div>
                                     <div class="col-12 value-dicoration">
-                                        ...
+                                        <asp:Label ID="curTemp" runat="server" Text="..."></asp:Label>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +118,7 @@
                                         Humidity:
                                     </div>
                                     <div class="col-12 value-dicoration">
-                                        ...
+                                        <asp:Label ID="curHum" runat="server" Text="..."></asp:Label>
                                     </div>
                                 </div>
                             </div>

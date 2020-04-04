@@ -9,20 +9,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
-
-
-
-        <script type="text/javascript">
-            window.onload = function () {
-                var rbl = document.getElementById("<%=filterRBbox.ClientID %>");
-                var radio = rbl.getElementsByTagName("INPUT");
-                for (var i = 0; i < radio.length; i++) {
-                    radio[i].onchange = function () {
-                        ShowHideValues(this.value);
+                <script type="text/javascript">
+                    window.onload = function () {
+                        var rbl = document.getElementById("<%=filterRBbox.ClientID %>");
+                        var radio = rbl.getElementsByTagName("INPUT");
+                        for (var i = 0; i < radio.length; i++) {
+                            radio[i].onchange = function () {
+                                ShowHideValues(this.value);
+                            };
+                        }
                     };
-                }
-            };
 </script>
+
+
+
 <head runat="server">
         <meta charset='utf-8'/>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
@@ -39,6 +39,7 @@
             background-color: aqua;
         }
     </style>
+
     <script type="text/javascript">
         function ShowHideValues(valueType) {
             var humidityValues = document.getElementById("humidityValues");
@@ -46,11 +47,16 @@
             var dateValues = document.getElementById("dateValues");
             if (valueType == 'Humidity') {
                 humidityValues.style.display = "block";
+                document.getElementById("minTempTxb").value = "";
+                document.getElementById("maxTempTxb").value = "";
             } else {
                 humidityValues.style.display = "none";
             }
             if (valueType == 'Tempeture') {
                 temperatureValues.style.display = "block";
+                document.getElementById("minHumTxb").value = "";
+                document.getElementById("maxHumTxb").value = "";
+
             } else {
                 temperatureValues.style.display = "none";
             }
@@ -60,8 +66,17 @@
                 dateValues.style.display = "none";
             }
         }
-    </script>
 
+        function clear() {
+            document.getElementById("minHumTxb").value = null;
+            document.getElementById("maxHumTxb").value = null;
+            document.getElementById("minTempTxb").value = null;
+            document.getElementById("maxTempTxb").value = null;
+            document.getElementById("minDatePicker").value = null;
+            document.getElementById("maxDatePicker").value = null;
+
+        }
+    </script>
 </head>
 <body>
             <form id="historyPageFRM" runat="server">
@@ -83,8 +98,8 @@
         </ul>
         <div class="row ">
             <div class="col-3 container">
-                <div style="width: 30%; height: 400px; overflow: scroll" class="row ">
-                    <asp:GridView ID="dataGridView1" runat="server" AllowSorting="True" Height="445px" style="margin-top: 6px" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="174px" >
+                <div style="width: 102%; height: 400px; overflow: scroll" class="row ">
+                    <asp:GridView ID="dataGridView1" runat="server" AllowSorting="True" Height="445px" style="margin-top: 6px" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="265px" >
                     <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                     <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
                     <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
@@ -100,7 +115,7 @@
                     <div class="col-6 py-3">
                         <legend>Filtred by:</legend>
                         <asp:RadioButtonList ID="filterRBbox" runat="server" Height="74px">
-                            <asp:ListItem Selected="True">Humidity</asp:ListItem>
+                            <asp:ListItem Selected="True" onClick="">Humidity</asp:ListItem>
                             <asp:ListItem>Tempeture</asp:ListItem>
                             <asp:ListItem>dates</asp:ListItem>
                         </asp:RadioButtonList>
@@ -110,48 +125,33 @@
                         <legend>Values:</legend>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">From</label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" id="inputPassword"
-                                    placeholder="from Humidity">
-                            </div>
+                            <asp:TextBox ID="minHumTxb" runat="server" TextMode="Number" placeholder="minimal humidity"></asp:TextBox>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">To</label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" id="inputPassword" placeholder="To Humidity">
-                            </div>
+                            <asp:TextBox ID="maxHumTxb" runat="server" TextMode="Number" placeholder="maximal humidity"></asp:TextBox>
                         </div>
                     </div>
                     <div id="temperatureValues" class="col-6 py-3" style="display: none;">
                         <legend>Values:</legend>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">From</label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" id="inputPassword"
-                                    placeholder="from Temperature">
-                            </div>
+                            <asp:TextBox ID="minTempTxb" runat="server" TextMode="Number" placeholder="minimal tempeture"></asp:TextBox>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">To</label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" id="inputPassword"
-                                    placeholder="To Temperature">
-                            </div>
+                            <asp:TextBox ID="maxTempTxb" runat="server" TextMode="Number" placeholder="maximal tempeture" ></asp:TextBox>
                         </div>
                     </div>
                     <div id="dateValues" class="col-6 py-3" style="display: none;">
                         <legend>Values:</legend>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">From</label>
-                            <div class="col-sm-9">
-                                <asp:TextBox ID="minDatePicker" runat="server" TextMode="Date"></asp:TextBox>
-                            </div>
+                            <asp:TextBox ID="minDatePicker" runat="server" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword" class="col-sm-3 col-form-label">To</label>
-                            <div class="col-sm-9">
-                                <asp:TextBox ID="maxDatePicker" runat="server" TextMode="Date"></asp:TextBox>
-                            </div>
+                            <asp:TextBox ID="maxDatePicker" runat="server" TextMode="Date"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -168,10 +168,10 @@
                 </div>
                 <div class="row">
                     <div class="col-6 ">
-                        <input class="btn btn-primary" type="button" value="Clear"/>
+                        <input class="btn btn-primary" type="button" value="Clear" onclick="clear"/>
                     </div>
                     <div class="col-6 ">
-                        <input class="btn btn-primary" type="button" value="Show"/>
+                        <input runat="server" class="btn btn-primary" type="button" value="Show" onserverclick="OKbutton_Click"/>
                     </div>
                 </div>
             </div>

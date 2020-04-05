@@ -26,7 +26,8 @@ namespace climate_IO
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HistoryPage.aspx");
+            Response.Redirect("HistoryPage.aspx",false);
+            Context.ApplicationInstance.CompleteRequest();
         }
 
 

@@ -222,7 +222,8 @@ namespace climate_IO
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MainPage.aspx");
+            Response.Redirect("MainPage.aspx",false);
+            Context.ApplicationInstance.CompleteRequest();
 
         }
     }

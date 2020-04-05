@@ -114,8 +114,8 @@
                 <div class="row ">
                     <div class="col-6 py-3">
                         <legend>Filtred by:</legend>
-                        <asp:RadioButtonList ID="filterRBbox" runat="server" Height="74px">
-                            <asp:ListItem Selected="True" onClick="">Humidity</asp:ListItem>
+                        <asp:RadioButtonList ID="filterRBbox" runat="server" Height="74px" >
+                            <asp:ListItem Selected="True">Humidity</asp:ListItem>
                             <asp:ListItem>Tempeture</asp:ListItem>
                             <asp:ListItem>dates</asp:ListItem>
                         </asp:RadioButtonList>

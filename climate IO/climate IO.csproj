@@ -153,6 +153,7 @@
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="settings.cs" />
     <Compile Include="TempInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -17,6 +17,7 @@ namespace climate_IO
         private bool firstLoad = true;
         protected async void Page_Load(object sender, EventArgs e)
         {
+            Global.table.Clear();
             if (firstLoad)
             {
                 Query capitalQuery = Global.db.Collection(Global.COLLECTION_NAME).OrderByDescending("WhenUNIX").Limit(100);
@@ -28,6 +29,8 @@ namespace climate_IO
                     Global.table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
 
                 }
+                dataGridView1.DataSource = Global.table;
+                dataGridView1.DataBind();
                 DataView dv = Global.table.DefaultView;
                 dv.Sort = "Time";
                 Global.SortTable = dv.ToTable();
@@ -36,8 +39,6 @@ namespace climate_IO
                 Global.yHum = Global.SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
                 chart1.Series[0].Points.DataBindXY(Global.x, Global.yTemp);
                 chart1.Series[1].Points.DataBindXY(Global.x, Global.yHum);
-                dataGridView1.DataSource = Global.table;
-                dataGridView1.DataBind();
                 firstLoad = false;
             }
 

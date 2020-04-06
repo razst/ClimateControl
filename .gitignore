@@ -27,3 +27,118 @@ climate IO/obj/Release/climate IO.csproj.CoreCompileInputs.cache
 climate IO/obj/Release/climate IO.csprojAssemblyReference.cache
 ClimateControll/obj/Release/ClimateControll.csproj.CoreCompileInputs.cache
 ClimateControll/obj/Release/ClimateControll.csprojAssemblyReference.cache
+climate IO/obj/Release/_WPPLastBuildInfo.txt
+climate IO/obj/Release/climate IO.csproj.FileListAbsolute.txt
+climate IO/obj/Release/climate IO.csprojAssemblyReference.cache
+climate IO/obj/Release/climate IO.dll
+climate IO/obj/Release/climate IO.pdb
+climate IO/obj/Release/DesignTimeResolveAssemblyReferences.cache
+climate IO/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+climate IO/obj/Release/Package/PackageTmp/bin/AjaxControlToolkit.dll
+climate IO/obj/Release/Package/PackageTmp/bin/climate IO.dll
+climate IO/obj/Release/Package/PackageTmp/bin/climate IO.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Api.CommonProtos.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Api.CommonProtos.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Api.Gax.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Api.Gax.Grpc.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Api.Gax.Grpc.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Api.Gax.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.Auth.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.Auth.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.Auth.PlatformServices.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.Core.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.Core.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Apis.PlatformServices.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Cloud.Firestore.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Cloud.Firestore.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Cloud.Firestore.V1.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Cloud.Firestore.V1.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.LongRunning.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.LongRunning.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Protobuf.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Google.Protobuf.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Grpc.Auth.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Grpc.Auth.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Grpc.Core.Api.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Grpc.Core.Api.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/Grpc.Core.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Grpc.Core.pdb
+climate IO/obj/Release/Package/PackageTmp/bin/grpc_csharp_ext.x64.dll
+climate IO/obj/Release/Package/PackageTmp/bin/grpc_csharp_ext.x86.dll
+climate IO/obj/Release/Package/PackageTmp/bin/libgrpc_csharp_ext.x64.dylib
+climate IO/obj/Release/Package/PackageTmp/bin/libgrpc_csharp_ext.x64.so
+climate IO/obj/Release/Package/PackageTmp/bin/libgrpc_csharp_ext.x86.dylib
+climate IO/obj/Release/Package/PackageTmp/bin/libgrpc_csharp_ext.x86.so
+climate IO/obj/Release/Package/PackageTmp/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+climate IO/obj/Release/Package/PackageTmp/bin/Newtonsoft.Json.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/csc.exe
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/csc.exe.config
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/csc.rsp
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/csi.exe
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/csi.exe.config
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/csi.rsp
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.CodeAnalysis.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.CSharp.Core.targets
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.Managed.Core.targets
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.VisualBasic.Core.targets
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/Microsoft.Win32.Primitives.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.AppContext.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Collections.Immutable.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Console.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Diagnostics.DiagnosticSource.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Diagnostics.FileVersionInfo.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Diagnostics.StackTrace.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Globalization.Calendars.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.IO.Compression.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.IO.Compression.ZipFile.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.IO.FileSystem.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.IO.FileSystem.Primitives.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Net.Http.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Net.Sockets.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Reflection.Metadata.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Security.Cryptography.Algorithms.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Security.Cryptography.Encoding.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Security.Cryptography.Primitives.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Security.Cryptography.X509Certificates.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Text.Encoding.CodePages.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Threading.Tasks.Extensions.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.ValueTuple.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Xml.ReaderWriter.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Xml.XmlDocument.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Xml.XPath.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/System.Xml.XPath.XDocument.dll
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/vbc.exe
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/vbc.exe.config
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/vbc.rsp
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/VBCSCompiler.exe
+climate IO/obj/Release/Package/PackageTmp/bin/roslyn/VBCSCompiler.exe.config
+climate IO/obj/Release/Package/PackageTmp/bin/System.Collections.Immutable.dll
+climate IO/obj/Release/Package/PackageTmp/bin/System.Interactive.Async.dll
+climate IO/obj/Release/Package/PackageTmp/bin/System.ValueTuple.dll
+climate IO/obj/Release/Package/PackageTmp/Global.asax
+climate IO/obj/Release/Package/PackageTmp/grpc_csharp_ext.x64.dll
+climate IO/obj/Release/Package/PackageTmp/grpc_csharp_ext.x86.dll
+climate IO/obj/Release/Package/PackageTmp/HistoryPage.aspx
+climate IO/obj/Release/Package/PackageTmp/libgrpc_csharp_ext.x64.dylib
+climate IO/obj/Release/Package/PackageTmp/libgrpc_csharp_ext.x64.so
+climate IO/obj/Release/Package/PackageTmp/libgrpc_csharp_ext.x86.dylib
+climate IO/obj/Release/Package/PackageTmp/libgrpc_csharp_ext.x86.so
+climate IO/obj/Release/Package/PackageTmp/MainPage.aspx
+climate IO/obj/Release/Package/PackageTmp/Web.config
+climate IO/obj/Release/TransformWebConfig/assist/Web.config
+climate IO/obj/Release/TransformWebConfig/original/Web.config
+climate IO/obj/Release/TransformWebConfig/transformed/Web.config
+climate IO/bin/climate IO.dll
+climate IO/bin/climate IO.pdb
+climate IO/bin/climate IO.dll
+climate IO/bin/climate IO.pdb

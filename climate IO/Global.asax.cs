@@ -11,7 +11,10 @@ namespace climate_IO
 {
     public class Global : System.Web.HttpApplication
     {
-        static public FirestoreDb db = FirestoreDb.Create("climatehistory-3ff7e");
+        private string db_key = @"C:\key\ClimateHistory-352e17151f9b.json";
+
+
+        static public FirestoreDb db = null;
         static public string COLLECTION_NAME = "ClimateInfo";
         static public DataTable table = new DataTable();
         static public DataTable SortTable = new DataTable();
@@ -20,9 +23,12 @@ namespace climate_IO
         static public List<float> yHum = new List<float>();
         protected void Application_Start(object sender, EventArgs e)
         {
-                table.Columns.Add("Time", typeof(string));
-                table.Columns.Add("Temp", typeof(float));
-                table.Columns.Add("Hum", typeof(float));
+            if (Environment.GetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS") == null)
+                System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", db_key);
+            db = FirestoreDb.Create("climatehistory-3ff7e");
+            table.Columns.Add("Time", typeof(string));
+            table.Columns.Add("Temp", typeof(float));
+            table.Columns.Add("Hum", typeof(float));
         }
     }
 }

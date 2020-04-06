@@ -142,3 +142,6 @@ climate IO/bin/climate IO.dll
 climate IO/bin/climate IO.pdb
 climate IO/bin/climate IO.dll
 climate IO/bin/climate IO.pdb
+.vs/ClimateControll/v16/.suo
+climate IO/obj/Release/climate IO.csprojAssemblyReference.cache
+climate IO/Properties/PublishProfiles/CustomProfile.pubxml.user

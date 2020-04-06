@@ -101,7 +101,7 @@
                 </a>
             </li>
                             <li class="nav-item">
-                    <a runat="server" class="nav-link text-dark font-italic" onserverclick="Button2_Click" >
+                    <a runat="server" class="nav-link text-dark font-italic"  >
                         <i class="fa fa-history mr-3 text-primary fa-fw"></i>
                         History
                     </a>

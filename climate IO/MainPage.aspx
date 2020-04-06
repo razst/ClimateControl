@@ -80,7 +80,7 @@
         
             <ul class="nav  bg-white mb-0 pb-5">
                             <li class="nav-item">
-                <a runat="server" onserverclick="Button1_Click" class="nav-link text-dark font-italic">
+                <a runat="server" class="nav-link text-dark font-italic">
                     <i class="fa fa-home mr-3 text-primary fa-fw"></i>
                     Home
                 </a>

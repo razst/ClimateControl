@@ -22,3 +22,8 @@ ClimateControll/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 ClimateControll/bin/Debug/ClimateControll.exe
 ClimateControll/bin/Debug/ClimateControll.pdb
 ClimateControll/obj/Debug/ClimateControll.exe
+.vs/ClimateControll/config/applicationhost.config
+climate IO/obj/Release/climate IO.csproj.CoreCompileInputs.cache
+climate IO/obj/Release/climate IO.csprojAssemblyReference.cache
+ClimateControll/obj/Release/ClimateControll.csproj.CoreCompileInputs.cache
+ClimateControll/obj/Release/ClimateControll.csprojAssemblyReference.cache

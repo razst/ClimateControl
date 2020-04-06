@@ -20,7 +20,7 @@ namespace ClimateControll
     public partial class MainFRM : Form
     {
 
-
+        private bool firstLoad = true;
         private TempInfo t = new TempInfo();
         private DateTime lastReport = DateTime.Now;
         private long lastAlarmTime = 0;
@@ -174,8 +174,31 @@ namespace ClimateControll
                 mySerialPort.Close();
         }
 
-        private void MainFRM_Load(object sender, EventArgs e)
+        private async void MainFRM_Load(object sender, EventArgs e)
         {
+            if (firstLoad)
+            {
+                DocumentReference docRef = MainFRM.db.Collection("settings").Document("settings_data");
+                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+                if (snapshot.Exists)
+                {
+                    settings curSet = snapshot.ConvertTo<settings>();
+                    Properties.Settings.Default.maxTemp = curSet.maxTemp;
+                    Properties.Settings.Default.minTemp = curSet.minTemp;
+                    Properties.Settings.Default.maxHumidity = curSet.maxHum;
+                    Properties.Settings.Default.minHumidity = curSet.minHum;
+                    Properties.Settings.Default.mailAdrees = curSet.mailAdress;
+                    Properties.Settings.Default.sendMail = curSet.sendMail;
+                    Properties.Settings.Default.turnOnAlert = curSet.turnOnAlert;
+                    Properties.Settings.Default.port = curSet.port;
+                    Properties.Settings.Default.TestMode = curSet.testMode;
+                    Properties.Settings.Default.ranMaxHum = curSet.ranMaxHum;
+                    Properties.Settings.Default.ranMaxTemp = curSet.ranMaxTemp;
+                    Properties.Settings.Default.ranMinHum = curSet.ranMinHum;
+                    Properties.Settings.Default.ranMinTemp = curSet.ranMinTemp;
+                }
+                firstLoad = false;
+            }
             Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
            
         }

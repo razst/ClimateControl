@@ -79,7 +79,12 @@
     <div class="container-fluid">
         
             <ul class="nav  bg-white mb-0 pb-5">
-
+                            <li class="nav-item">
+                <a runat="server" onserverclick="Button1_Click" class="nav-link text-dark font-italic">
+                    <i class="fa fa-home mr-3 text-primary fa-fw"></i>
+                    Home
+                </a>
+            </li>
                 <li class="nav-item">
                     <a runat="server" class="nav-link text-dark font-italic" onserverclick="Button2_Click" >
                         <i class="fa fa-history mr-3 text-primary fa-fw"></i>
@@ -101,7 +106,7 @@
                         <img src="https://pngimage.net/wp-content/uploads/2018/06/green-button-png-7.png"
                             class="deviation" alt="Deviation"/>
                     </div>
-                    <div class="col-10 container main-frame vertical-center">
+                    <div class="col-8 container main-frame vertical-center">
                         <div class="row ">
                             <div class="col-6 container">
                                 <div class="row ">

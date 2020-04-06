@@ -47,27 +47,38 @@
             var dateValues = document.getElementById("dateValues");
             if (valueType == 'Humidity') {
                 humidityValues.style.display = "block";
-                document.getElementById("minTempTxb").value = "";
-                document.getElementById("maxTempTxb").value = "";
+                document.getElementById("minTempTxb").value = null;
+                document.getElementById("maxTempTxb").value = null;
+                document.getElementById("minDatePicker").value = null;
+                document.getElementById("maxDatePicker").value = null;
             } else {
                 humidityValues.style.display = "none";
             }
             if (valueType == 'Tempeture') {
                 temperatureValues.style.display = "block";
-                document.getElementById("minHumTxb").value = "";
-                document.getElementById("maxHumTxb").value = "";
+                document.getElementById("minHumTxb").value = null;
+                document.getElementById("maxHumTxb").value = null;
+                document.getElementById("minDatePicker").value = null;
+                document.getElementById("maxDatePicker").value = null;
 
             } else {
                 temperatureValues.style.display = "none";
             }
             if (valueType == 'dates') {
                 dateValues.style.display = "block";
+                document.getElementById("minHumTxb").value = null;
+                document.getElementById("maxHumTxb").value = null;
+                document.getElementById("minTempTxb").value = null;
+                document.getElementById("maxTempTxb").value = null;
+
             } else {
                 dateValues.style.display = "none";
+
             }
         }
 
         function clear() {
+            alert("hi");
             document.getElementById("minHumTxb").value = null;
             document.getElementById("maxHumTxb").value = null;
             document.getElementById("minTempTxb").value = null;
@@ -89,6 +100,12 @@
                     Home
                 </a>
             </li>
+                            <li class="nav-item">
+                    <a runat="server" class="nav-link text-dark font-italic" onserverclick="Button2_Click" >
+                        <i class="fa fa-history mr-3 text-primary fa-fw"></i>
+                        History
+                    </a>
+                </li>
             <li class="nav-item">
                 <a href="#" class="nav-link text-dark font-italic">
                     <i class="fa fa-cog mr-3 text-primary fa-fw"></i>
@@ -176,7 +193,7 @@
                 </div>
             </div>
             <div class="col-9 " style="background-color: cyan;">
-                <asp:Chart ID="chart1" runat="server" Width="1216px" style="margin-left: 0px"><series>
+                <asp:Chart ID="chart1" runat="server" Width="1221px" style="margin-left: 0px"><series>
                 <asp:Series ChartArea="ChartArea1" ChartType="FastLine" Name="Tempeture">
                 </asp:Series>
                 <asp:Series Name="Humiditiy" ChartType="FastLine">

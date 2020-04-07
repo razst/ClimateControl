@@ -145,3 +145,14 @@ climate IO/bin/climate IO.pdb
 .vs/ClimateControll/v16/.suo
 climate IO/obj/Release/climate IO.csprojAssemblyReference.cache
 climate IO/Properties/PublishProfiles/CustomProfile.pubxml.user
+ClimateControll/obj/Release/ClimateControll.pdb
+ClimateControll/obj/Release/ClimateControll.exe
+ClimateControll/obj/Release/ClimateControll.csprojAssemblyReference.cache
+ClimateControll/obj/Release/ClimateControll.csproj.GenerateResource.cache
+ClimateControll/obj/Release/ClimateControll.csproj.FileListAbsolute.txt
+ClimateControll/bin/Release/ClimateControll.pdb
+ClimateControll/bin/Release/ClimateControll.exe
+climate IO/obj/Release/climate IO.csprojAssemblyReference.cache
+climate IO/obj/Release/climate IO.dll
+climate IO/obj/Release/climate IO.pdb
+climate IO/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache

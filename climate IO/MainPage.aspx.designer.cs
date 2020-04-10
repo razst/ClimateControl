@@ -24,6 +24,24 @@ namespace climate_IO
         protected global::System.Web.UI.HtmlControls.HtmlForm mainPageFRM;
 
         /// <summary>
+        /// greenL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image greenL;
+
+        /// <summary>
+        /// redL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image redL;
+
+        /// <summary>
         /// curTemp control.
         /// </summary>
         /// <remarks>

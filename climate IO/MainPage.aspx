@@ -103,8 +103,8 @@
             <div class="col=12 container">
                 <div class="row">
                     <div class="col-2 deviation-center ">
-                        <img src="https://pngimage.net/wp-content/uploads/2018/06/green-button-png-7.png"
-                            class="deviation" alt="Deviation"/>
+                        <asp:Image ID="greenL" runat="server" ImageUrl="https://pngimage.net/wp-content/uploads/2018/06/green-button-png-7.png" Height="200px" Width="200px" Visible="False" />
+                        <asp:Image ID="redL" runat="server" ImageUrl="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" Height="200px" Visible="False" Width="200px" />
                     </div>
                     <div class="col-8 container main-frame vertical-center">
                         <div class="row ">

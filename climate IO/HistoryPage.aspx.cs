@@ -14,13 +14,12 @@ namespace climate_IO
 {
     public partial class HistoryPage : System.Web.UI.Page
     {
-        private bool firstLoad = true;
+        
         private const string ASCENDING = " ASC";
         private const string DESCENDING = " DESC";
         protected async void Page_Load(object sender, EventArgs e)
         {
-            Global.table.Clear();
-            if (firstLoad)
+            if (Global.firstLoad)
             {
                 Query capitalQuery = Global.db.Collection(Global.COLLECTION_NAME).OrderByDescending("WhenUNIX").Limit(100);
                 QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
@@ -39,11 +38,10 @@ namespace climate_IO
                 Global.x = Global.SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("Time")).ToList();
                 Global.yTemp = Global.SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Temp")).ToList();
                 Global.yHum = Global.SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
-                chart1.Series[0].Points.DataBindXY(Global.x, Global.yTemp);
-                chart1.Series[1].Points.DataBindXY(Global.x, Global.yHum);
-                firstLoad = false;
+                Global.firstLoad = false;
             }
-
+            chart1.Series[0].Points.DataBindXY(Global.x, Global.yTemp);
+            chart1.Series[1].Points.DataBindXY(Global.x, Global.yHum);
 
         }
 
@@ -272,12 +270,11 @@ namespace climate_IO
         private void SortGridView(string sortExpression, string direction)
         {
             //  You can cache the DataTable for improving performance
-            DataTable dt = Global.table;
 
-            DataView dv = new DataView(dt);
-            dv.Sort = sortExpression + direction;
+            DataView dgv = new DataView(Global.table);
+            dgv.Sort = sortExpression + direction;
 
-            dataGridView1.DataSource = dv;
+            dataGridView1.DataSource = dgv;
             dataGridView1.DataBind();
         }
 

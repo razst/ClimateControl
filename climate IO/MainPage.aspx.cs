@@ -30,6 +30,7 @@ namespace climate_IO
             }
             curTemp.Text = "" + temp.Temperature;
             curHum.Text = "" + temp.Humidity;
+            timeLB.Text = "" + temp.WhenString;
             if (temp.Temperature<curSet.minTemp|| temp.Temperature > curSet.maxTemp||temp.Humidity<curSet.minHum|| temp.Humidity < curSet.maxHum)
             {
                 redL.Visible = true;

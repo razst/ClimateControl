@@ -116,7 +116,7 @@
         <div class="row ">
             <div class="col-3 container">
                 <div style="width: 102%; height: 400px; overflow: scroll" class="row ">
-                    <asp:GridView ID="dataGridView1" runat="server" AllowSorting="True" Height="445px" style="margin-top: 6px" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="265px" >
+                    <asp:GridView ID="dataGridView1" runat="server" AllowSorting="True" Height="445px" style="margin-top: 6px" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="265px"  OnSorting="dataGridView1_Sorting" >
                     <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                     <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
                     <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />

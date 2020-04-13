@@ -94,8 +94,11 @@
                                 <li class="nav-item">
                     <a class="nav-link text-dark font-italic">
                         <i class="fa fa-cog mr-3 text-primary fa-fw"></i>
-                        Setting
+                        Setting                                    
                     </a>
+                </li>
+                <li>
+                    <asp:Label ID="timeLB" runat="server" Text="..."></asp:Label>
                 </li>
             </ul>
         

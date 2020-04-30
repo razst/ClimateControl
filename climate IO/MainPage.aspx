@@ -97,9 +97,6 @@
                         Setting                                    
                     </a>
                 </li>
-                <li>
-                    <asp:Label ID="timeLB" runat="server" Text="..."></asp:Label>
-                </li>
             </ul>
         
         <div class="row align-center py-10">
@@ -136,6 +133,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-6 container">
+            <div class="row ">
+                <div class="col-6 text-dicoration">
+                    Last report time:
+                </div>
+                <div class="col-6 value-dicoration">
+                    <asp:Label ID="timeLB" runat="server" Text="..."></asp:Label>
+                </div>
+            </div>
+        </div>
+
+
     </div>
      </form>
 </body>

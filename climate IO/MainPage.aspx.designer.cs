@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace climate_IO
-{
-
-
-    public partial class MainPage
-    {
-
+namespace climate_IO {
+    
+    
+    public partial class MainPage {
+        
         /// <summary>
         /// mainPageFRM control.
         /// </summary>
@@ -22,16 +20,7 @@ namespace climate_IO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm mainPageFRM;
-
-        /// <summary>
-        /// timeLB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label timeLB;
-
+        
         /// <summary>
         /// greenL control.
         /// </summary>
@@ -40,7 +29,7 @@ namespace climate_IO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image greenL;
-
+        
         /// <summary>
         /// redL control.
         /// </summary>
@@ -49,7 +38,7 @@ namespace climate_IO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image redL;
-
+        
         /// <summary>
         /// curTemp control.
         /// </summary>
@@ -58,7 +47,7 @@ namespace climate_IO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label curTemp;
-
+        
         /// <summary>
         /// curHum control.
         /// </summary>
@@ -67,5 +56,14 @@ namespace climate_IO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label curHum;
+        
+        /// <summary>
+        /// timeLB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label timeLB;
     }
 }

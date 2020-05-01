@@ -47,7 +47,7 @@ namespace ClimateControll
 
 
 
-            Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).OrderByDescending("WhenUNIX").Limit(100);
+            Query capitalQuery = Program.db.Collection(MainFRM.COLLECTION_NAME).OrderByDescending("WhenUNIX").Limit(100);
             QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
             foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
             {
@@ -121,7 +121,7 @@ namespace ClimateControll
                 {
                     long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
                     long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
-                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime).Limit(limit);
+                    Query capitalQuery = Program.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime).Limit(limit);
                     QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
                     foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
                     {
@@ -146,7 +146,7 @@ namespace ClimateControll
 
                     long minUnixTime = ((DateTimeOffset)minDatePicker.Value).ToUnixTimeSeconds() - 86400;
                     long maxUnixTime = ((DateTimeOffset)maxDatePicker.Value).ToUnixTimeSeconds();
-                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime);
+                    Query capitalQuery = Program.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo("WhenUNIX", minUnixTime).WhereLessThanOrEqualTo("WhenUNIX", maxUnixTime);
                     QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
                     foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
                     {
@@ -169,7 +169,7 @@ namespace ClimateControll
             {
                 if (isLimit)
                 {
-                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(limit);
+                    Query capitalQuery = Program.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max).Limit(limit);
                     QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
                     foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
                     {
@@ -191,7 +191,7 @@ namespace ClimateControll
                 else
                 {
 
-                    Query capitalQuery = MainFRM.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max);
+                    Query capitalQuery = Program.db.Collection(MainFRM.COLLECTION_NAME).WhereGreaterThanOrEqualTo(filter, min).WhereLessThanOrEqualTo(filter, max);
                     QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
                     foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
                     {

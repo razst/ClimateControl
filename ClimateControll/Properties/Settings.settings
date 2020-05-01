@@ -5,6 +5,9 @@
     <Setting Name="minTemp" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
+    <Setting Name="updateDB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
     <Setting Name="maxTemp" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">25</Value>
     </Setting>

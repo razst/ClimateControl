@@ -12,7 +12,7 @@ namespace climate_IO
     public class Global : System.Web.HttpApplication
     {
         static public bool firstLoad = true;
-        private bool IS_TESTING = false;
+        private bool IS_TESTING = true;
             
         private string db_key_test = @"C:\key\ClimateHistory-352e17151f9b.json"; // test DB
         private string db_key_prod = @"C:\key\CCPROD-b64060fb7bfd.json"; // prod DB

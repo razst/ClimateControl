@@ -35,6 +35,8 @@ namespace ClimateControll
             RanMaxTemp.Text =""+ Properties.Settings.Default.ranMaxTemp;
             RanMinHum.Text = "" + Properties.Settings.Default.ranMinHum;
             RanMinTemp.Text = "" + Properties.Settings.Default.ranMinTemp;
+            updateDBTxb.Text = "" + Properties.Settings.Default.updateDB;
+
         }
 
         private async void OKButton_Click(object sender, EventArgs e)
@@ -85,7 +87,7 @@ namespace ClimateControll
                 Properties.Settings.Default.ranMaxTemp = int.Parse(RanMaxTemp.Text);
                 Properties.Settings.Default.ranMinHum = int.Parse(RanMinHum.Text);
                 Properties.Settings.Default.ranMinTemp = int.Parse(RanMinTemp.Text);
-
+                Properties.Settings.Default.updateDB = int.Parse(updateDBTxb.Text);
 
 
                 Properties.Settings.Default.Save();
@@ -104,7 +106,8 @@ namespace ClimateControll
                 s.ranMaxTemp = Properties.Settings.Default.ranMaxTemp;
                 s.ranMinHum = Properties.Settings.Default.ranMinHum;
                 s.ranMinTemp = Properties.Settings.Default.ranMinTemp;
-                DocumentReference docRef = MainFRM.db.Collection("settings").Document("settings_data");
+                s.updateDB = Properties.Settings.Default.updateDB;
+                DocumentReference docRef = Program.db.Collection("settings").Document("settings_data");
                 await docRef.SetAsync(s);
 
 
@@ -134,14 +137,21 @@ namespace ClimateControll
             
         }
 
-        private void TbMailAdress_TextChanged(object sender, EventArgs e)
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void CbTestMode_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (CbTestMode.Checked == true)
+            {
+                TestSetPnl.Visible = true;
+            }
+            else
+            {
+                TestSetPnl.Visible = false;
+            }
         }
     }
 }

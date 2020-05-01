@@ -29,7 +29,6 @@ namespace ClimateControll
         private string[] tempHum;
         private string temp;
         private string hum;
-        static public FirestoreDb db = FirestoreDb.Create("climatehistory-3ff7e");
         static public string COLLECTION_NAME = "ClimateInfo";
         private Random rndTemp = new Random();
         private Random rndHum = new Random();
@@ -87,14 +86,14 @@ namespace ClimateControll
                 TbxHum.Text = hum;
                 TbxTemp.Text = temp;
 
-                if (nowUnixTime - lastUnixTime > 60)//TODO: change "10"
+                if (nowUnixTime - lastUnixTime > Properties.Settings.Default.updateDB*60)//TODO: change "10"
                 {
                     t.WhenUNIX = nowUnixTime;
                     t.WhenString = now.ToString("yyyy-MM-dd HH:mm:ss");
                     t.Temperature = float.Parse(temp);
                     t.Humidity = float.Parse(hum);
 
-                    DocumentReference docRef = db.Collection(COLLECTION_NAME).Document(t.WhenUNIX.ToString());
+                    DocumentReference docRef = Program.db.Collection(COLLECTION_NAME).Document(t.WhenUNIX.ToString());
 
 
                     await docRef.SetAsync(t);
@@ -178,7 +177,8 @@ namespace ClimateControll
         {
             if (firstLoad)
             {
-                DocumentReference docRef = MainFRM.db.Collection("settings").Document("settings_data");
+
+                DocumentReference docRef = Program.db.Collection("settings").Document("settings_data");
                 DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
                 if (snapshot.Exists)
                 {
@@ -196,6 +196,7 @@ namespace ClimateControll
                     Properties.Settings.Default.ranMaxTemp = curSet.ranMaxTemp;
                     Properties.Settings.Default.ranMinHum = curSet.ranMinHum;
                     Properties.Settings.Default.ranMinTemp = curSet.ranMinTemp;
+                    Properties.Settings.Default.updateDB = curSet.updateDB;
                 }
                 firstLoad = false;
             }

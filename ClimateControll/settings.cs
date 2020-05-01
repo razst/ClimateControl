@@ -49,7 +49,8 @@ namespace ClimateControll
         [FirestoreProperty]
         public bool turnOnAlert { get; set; }
 
-
+        [FirestoreProperty]
+        public int updateDB { get; set; }
 
 
     }

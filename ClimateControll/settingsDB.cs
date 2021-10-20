@@ -10,7 +10,7 @@ namespace ClimateControll
 {
     [FirestoreData]
 
-    internal class settings
+    internal class settingsDB
     {
         [FirestoreProperty]
         public string mailAdress { get; set; }

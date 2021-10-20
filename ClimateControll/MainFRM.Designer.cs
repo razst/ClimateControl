@@ -43,6 +43,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pbGreen = new System.Windows.Forms.PictureBox();
             this.config = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGreen2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGreen)).BeginInit();
@@ -105,6 +106,7 @@
             this.TbxTemp.Size = new System.Drawing.Size(91, 86);
             this.TbxTemp.TabIndex = 14;
             this.TbxTemp.Text = "...";
+            this.TbxTemp.Click += new System.EventHandler(this.TbxTemp_Click);
             // 
             // panel1
             // 
@@ -157,6 +159,7 @@
             this.pbGreen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbGreen2.TabIndex = 19;
             this.pbGreen2.TabStop = false;
+            this.pbGreen2.Click += new System.EventHandler(this.pbGreen2_Click);
             // 
             // button2
             // 
@@ -192,12 +195,23 @@
             this.config.UseVisualStyleBackColor = false;
             this.config.Click += new System.EventHandler(this.config_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(77, 30);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // MainFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(703, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pbGreen2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pbGreen);
@@ -232,6 +246,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbGreen2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

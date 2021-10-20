@@ -44,6 +44,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tbPortName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.updateDBTxb = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CbTestMode = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -58,9 +61,6 @@
             this.RanMinHum = new System.Windows.Forms.TextBox();
             this.RanMaxHum = new System.Windows.Forms.TextBox();
             this.TestSetPnl = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.updateDBTxb = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,6 +92,7 @@
             this.TbxMailAdress.Name = "TbxMailAdress";
             this.TbxMailAdress.Size = new System.Drawing.Size(141, 20);
             this.TbxMailAdress.TabIndex = 23;
+            this.TbxMailAdress.TextChanged += new System.EventHandler(this.TbxMailAdress_TextChanged);
             // 
             // CbMail
             // 
@@ -216,6 +217,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 361);
             this.panel1.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(201, 218);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "minutes";
+            // 
+            // updateDBTxb
+            // 
+            this.updateDBTxb.Location = new System.Drawing.Point(149, 215);
+            this.updateDBTxb.Name = "updateDBTxb";
+            this.updateDBTxb.Size = new System.Drawing.Size(46, 20);
+            this.updateDBTxb.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(24, 218);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(119, 13);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "update database evrey:";
             // 
             // panel2
             // 
@@ -350,31 +376,6 @@
             this.TestSetPnl.Name = "TestSetPnl";
             this.TestSetPnl.Size = new System.Drawing.Size(187, 146);
             this.TestSetPnl.TabIndex = 41;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(24, 218);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 13);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "update database evrey:";
-            // 
-            // updateDBTxb
-            // 
-            this.updateDBTxb.Location = new System.Drawing.Point(149, 215);
-            this.updateDBTxb.Name = "updateDBTxb";
-            this.updateDBTxb.Size = new System.Drawing.Size(46, 20);
-            this.updateDBTxb.TabIndex = 33;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(201, 218);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "minutes";
             // 
             // SettingsFRM
             // 

@@ -21,7 +21,7 @@ namespace ClimateControll
     {
 
         private bool firstLoad = true;
-        private TempInfo t = new TempInfo();
+        private TempInfo climateInfo = new TempInfo();
         private DateTime lastReport = DateTime.Now;
         private long lastAlarmTime = 0;
         private SerialPort mySerialPort;
@@ -34,6 +34,7 @@ namespace ClimateControll
         private Random rndHum = new Random();
         private CancellationTokenSource source = new CancellationTokenSource();
         private bool stop = false;
+        private bool IsAlarm = false;
         public MainFRM()
         {
             InitializeComponent();
@@ -71,8 +72,14 @@ namespace ClimateControll
             this.Invoke(new EventHandler(displayDataEvent));
 
         }
-        
 
+        private void playAlarm()
+        {
+            SoundPlayer soundAlarm = new SoundPlayer(ClimateControll.Properties.Resources.alarm);
+            if (Properties.Settings.Default.turnOnAlert) soundAlarm.Play();
+            pbGreen2.Visible = false;
+            IsAlarm = true;
+        }
         private async void displayDataEvent(object sender, EventArgs e)
         {
             if (indata.Contains(','))
@@ -85,22 +92,6 @@ namespace ClimateControll
                 hum = tempHum[0];
                 TbxHum.Text = hum;
                 TbxTemp.Text = temp;
-
-                if (nowUnixTime - lastUnixTime > Properties.Settings.Default.updateDB*60)//TODO: change "10"
-                {
-                    t.WhenUNIX = nowUnixTime;
-                    t.WhenString = now.ToString("yyyy-MM-dd HH:mm:ss");
-                    t.Temperature = float.Parse(temp);
-                    t.Humidity = float.Parse(hum);
-
-                    DocumentReference docRef = Program.db.Collection(COLLECTION_NAME).Document(t.WhenUNIX.ToString());
-
-
-                    await docRef.SetAsync(t);
-
-                    lastReport = now;
-                }
-                
                 if (checkAlaram(Properties.Settings.Default.minTemp, Properties.Settings.Default.maxTemp,
                     Properties.Settings.Default.maxHumidity,Properties.Settings.Default.minHumidity)) 
                 {
@@ -111,6 +102,24 @@ namespace ClimateControll
                 {
                     stopAlarm();
                 }
+                if (nowUnixTime - lastUnixTime > Properties.Settings.Default.updateDB*60)//TODO: change "10"
+                {
+                    climateInfo.WhenUNIX = nowUnixTime;
+                    climateInfo.WhenString = now.ToString("yyyy-MM-dd HH:mm:ss");
+                    climateInfo.Temperature = float.Parse(temp);
+                    climateInfo.Humidity = float.Parse(hum);
+                    climateInfo.IsAlarmed = IsAlarm;
+                    
+
+                    DocumentReference docRef = Program.db.Collection(COLLECTION_NAME).Document(climateInfo.WhenUNIX.ToString());
+
+
+                    await docRef.SetAsync(climateInfo);
+
+                    lastReport = now;
+                }
+                
+
                 if (Properties.Settings.Default.TestMode)
                 {
                     TestModeData();
@@ -182,7 +191,7 @@ namespace ClimateControll
                 DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
                 if (snapshot.Exists)
                 {
-                    settings curSet = snapshot.ConvertTo<settings>();
+                    settingsDB curSet = snapshot.ConvertTo<settingsDB>();
                     Properties.Settings.Default.maxTemp = curSet.maxTemp;
                     Properties.Settings.Default.minTemp = curSet.minTemp;
                     Properties.Settings.Default.maxHumidity = curSet.maxHum;
@@ -221,37 +230,32 @@ namespace ClimateControll
         private void sendEmail()
         {
             // CHECK IF THISIS TIME TO SEND AN EMAIL
-            DateTime now = DateTime.Now;
-            long nowUnixTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
-            int CurrectTemp = int.Parse(tempHum[1]);
-            int Currecthum = int.Parse(tempHum[0]);
+             DateTime now = DateTime.Now;
+             long nowUnixTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
+             int CurrectTemp = int.Parse(tempHum[1]);
+             int Currecthum = int.Parse(tempHum[0]);
 
-            if (Properties.Settings.Default.sendMail && ((nowUnixTime - lastAlarmTime) > 600))
-            {
-                MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "Climate Control Alarm", "Temperature=" + CurrectTemp+"\nHumidity="+Currecthum);
-                msg.IsBodyHtml = true;
-                SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
-                sc.UseDefaultCredentials = false;
-                NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");
-                sc.Credentials = cre;
-                sc.EnableSsl = true;
-                sc.Send(msg);
-                lastAlarmTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
-            }
+             if (Properties.Settings.Default.sendMail && ((nowUnixTime - lastAlarmTime) > 1800))
+             {
+                 MailMessage msg = new MailMessage("emailme.ydrive@gmail.com", Properties.Settings.Default.mailAdrees, "Climate Control Alarm", "Temperature=" + CurrectTemp+"\nHumidity="+Currecthum);
+                 msg.IsBodyHtml = true;
+                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
+                 sc.UseDefaultCredentials = false;
+                 NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");
+                 sc.Credentials = cre;
+                 sc.EnableSsl = true;
+                 sc.Send(msg);
+                 lastAlarmTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
+             }
+        }
 
-        }
-        private void playAlarm()
-        {
-            SoundPlayer soundAlarm = new SoundPlayer(ClimateControll.Properties.Resources.alarm);
-            if(Properties.Settings.Default.turnOnAlert) soundAlarm.Play();
-            pbGreen2.Visible = false;
-        }
         private void stopAlarm()
         {
             DateTime now = DateTime.Now;
             SoundPlayer soundAlarm = new SoundPlayer(@"C:\Users\pc\Documents\GitHub\ClimateControl\alarm.wav");
             soundAlarm.Stop();
             pbGreen2.Visible = true;
+            IsAlarm = false;
         }
 
         private void pbGreen_Click(object sender, EventArgs e)
@@ -280,5 +284,19 @@ namespace ClimateControll
 
         }
 
+        private void pbGreen2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            sendEmail();
+        }
+
+        private void TbxTemp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

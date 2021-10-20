@@ -18,7 +18,7 @@ namespace ClimateControll
         {
             InitializeComponent();
         }
-        private settings s = new settings();
+        private settingsDB s = new settingsDB();
 
         private void SettingsFRM_Load(object sender, EventArgs e)
         {
@@ -152,6 +152,11 @@ namespace ClimateControll
             {
                 TestSetPnl.Visible = false;
             }
+        }
+
+        private void TbxMailAdress_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

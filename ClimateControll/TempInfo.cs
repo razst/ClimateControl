@@ -14,5 +14,7 @@ namespace ClimateControll
         public float Temperature { get; set; }
         [FirestoreProperty]
         public float Humidity { get; set; }
+        [FirestoreProperty]
+        public bool IsAlarmed { get; set; } 
     }
 }

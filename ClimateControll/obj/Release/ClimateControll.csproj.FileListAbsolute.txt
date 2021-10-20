@@ -264,7 +264,6 @@ C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateC
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateControll.Properties.Resources.resources
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateControll.SettingsFRM.resources
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateControll.csproj.GenerateResource.cache
-C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateControll.csproj.CoreCompileInputs.cache
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateControll.csproj.CopyComplete
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateControll.exe
 C:\Users\pc\Documents\GitHub\ClimateControl\ClimateControll\obj\Release\ClimateControll.pdb

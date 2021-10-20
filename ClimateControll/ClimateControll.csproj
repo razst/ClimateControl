@@ -124,7 +124,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="settings.cs" />
+    <Compile Include="settingsDB.cs" />
     <Compile Include="SettingsFRM.cs">
       <SubType>Form</SubType>
     </Compile>

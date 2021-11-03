@@ -28,15 +28,20 @@ namespace ClimateControll
         private List<string> x = new List<string>();
         private List<float> yTemp = new List<float>();
         private List<float> yHum = new List<float>();
+        private List<bool> IsAl = new List<bool>();
+
+
 
         private async void History_Load(object sender, EventArgs e)
         {
             limitsCB.SelectedItem = "100";
             chart1.Series.Add("Tempeture");
             chart1.Series.Add("Humiditiy");
+            chart1.Series.Add("IsAlarm");
             table.Columns.Add("Time", typeof(string));
             table.Columns.Add("Temp", typeof(float));
             table.Columns.Add("Hum", typeof(float));
+            table.Columns.Add("IsAlarm", typeof(bool));
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = table;
             dataGridView1.Sort(dataGridView1.Columns["time"],ListSortDirection.Descending);
@@ -53,7 +58,7 @@ namespace ClimateControll
             {
                 TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                table.Rows.Add(temp.WhenString, temp.Temperature,temp.Humidity);
+                table.Rows.Add(temp.WhenString, temp.Temperature,temp.Humidity,temp.IsAlarmed);
 
             }
             DataView dv = table.DefaultView;
@@ -62,6 +67,7 @@ namespace ClimateControll
             x = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<string>("Time")).ToList();
             yTemp = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Temp")).ToList();
             yHum = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<float>("Hum")).ToList();
+            IsAl = SortTable.Rows.OfType<DataRow>().Select(dr => dr.Field<bool>("IsAlarm")).ToList();
 
 
             chart1.Series[0].Points.DataBindXY(x, yTemp);
@@ -111,6 +117,20 @@ namespace ClimateControll
             {
                 max = float.Parse(maxTxb.Text);
             }
+
+            /*if (RBallAlarm.Checked)
+            {
+               
+            }
+            if (RBalarmOn.Checked)
+            {
+                if ()
+            }
+            if (RBalarmOff.Checked)
+            {
+                filter = "alarm off";
+            }*/
+            
 
 
 
@@ -249,9 +269,6 @@ namespace ClimateControll
             Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

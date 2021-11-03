@@ -49,10 +49,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.limitsCB = new System.Windows.Forms.ComboBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RBalarmOff = new System.Windows.Forms.RadioButton();
+            this.RBalarmOn = new System.Windows.Forms.RadioButton();
+            this.RBallAlarm = new System.Windows.Forms.RadioButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.MainGB.SuspendLayout();
             this.VarGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -101,7 +107,7 @@
             // 
             // OKbutton
             // 
-            this.OKbutton.Location = new System.Drawing.Point(189, 650);
+            this.OKbutton.Location = new System.Drawing.Point(180, 691);
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 23);
             this.OKbutton.TabIndex = 6;
@@ -175,7 +181,7 @@
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(25, 650);
+            this.clearBtn.Location = new System.Drawing.Point(25, 691);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 23);
             this.clearBtn.TabIndex = 14;
@@ -211,12 +217,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 601);
+            this.label1.Location = new System.Drawing.Point(12, 655);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "items:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // limitsCB
             // 
@@ -227,7 +232,7 @@
             "100",
             "200",
             "no limit"});
-            this.limitsCB.Location = new System.Drawing.Point(64, 598);
+            this.limitsCB.Location = new System.Drawing.Point(64, 652);
             this.limitsCB.Name = "limitsCB";
             this.limitsCB.Size = new System.Drawing.Size(121, 21);
             this.limitsCB.TabIndex = 20;
@@ -244,11 +249,57 @@
             this.chart1.TabIndex = 21;
             this.chart1.Text = "chart1";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.RBalarmOff);
+            this.groupBox1.Controls.Add(this.RBalarmOn);
+            this.groupBox1.Controls.Add(this.RBallAlarm);
+            this.groupBox1.Location = new System.Drawing.Point(12, 578);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(316, 50);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Aalarm Filter";
+            // 
+            // RBalarmOff
+            // 
+            this.RBalarmOff.AutoSize = true;
+            this.RBalarmOff.Location = new System.Drawing.Point(224, 19);
+            this.RBalarmOff.Name = "RBalarmOff";
+            this.RBalarmOff.Size = new System.Drawing.Size(65, 17);
+            this.RBalarmOff.TabIndex = 24;
+            this.RBalarmOff.TabStop = true;
+            this.RBalarmOff.Text = "alarm off";
+            this.RBalarmOff.UseVisualStyleBackColor = true;
+            // 
+            // RBalarmOn
+            // 
+            this.RBalarmOn.AutoSize = true;
+            this.RBalarmOn.Location = new System.Drawing.Point(116, 17);
+            this.RBalarmOn.Name = "RBalarmOn";
+            this.RBalarmOn.Size = new System.Drawing.Size(65, 17);
+            this.RBalarmOn.TabIndex = 23;
+            this.RBalarmOn.TabStop = true;
+            this.RBalarmOn.Text = "alarm on";
+            this.RBalarmOn.UseVisualStyleBackColor = true;
+            // 
+            // RBallAlarm
+            // 
+            this.RBallAlarm.AutoSize = true;
+            this.RBallAlarm.Location = new System.Drawing.Point(6, 19);
+            this.RBallAlarm.Name = "RBallAlarm";
+            this.RBallAlarm.Size = new System.Drawing.Size(35, 17);
+            this.RBallAlarm.TabIndex = 22;
+            this.RBallAlarm.TabStop = true;
+            this.RBallAlarm.Text = "all";
+            this.RBallAlarm.UseVisualStyleBackColor = true;
+            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1473, 769);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.limitsCB);
             this.Controls.Add(this.label1);
@@ -270,6 +321,8 @@
             this.VarGB.ResumeLayout(false);
             this.VarGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +348,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox limitsCB;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.RadioButton RBalarmOff;
+        private System.Windows.Forms.RadioButton RBalarmOn;
+        private System.Windows.Forms.RadioButton RBallAlarm;
     }
 }

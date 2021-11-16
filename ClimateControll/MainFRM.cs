@@ -244,7 +244,7 @@ namespace ClimateControll
                  NetworkCredential cre = new NetworkCredential("emailme.ydrive@gmail.com", "ydrive123");
                  sc.Credentials = cre;
                  sc.EnableSsl = true;
-                 sc.Send(msg);
+                 //sc.Send(msg);
                  lastAlarmTime = ((DateTimeOffset)now).ToUnixTimeSeconds();
              }
         }

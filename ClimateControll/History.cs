@@ -58,7 +58,25 @@ namespace ClimateControll
             {
                 TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                table.Rows.Add(temp.WhenString, temp.Temperature,temp.Humidity,temp.IsAlarmed);
+                if (RBalarmOn.Checked)
+                {
+                    if (temp.IsAlarmed)
+                    {
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                    }
+                }
+                else if (RBalarmOff.Checked)
+                {
+                    if (!temp.IsAlarmed)
+                    {
+                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                    }
+
+                }
+                else
+                {
+                    table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                }
 
             }
             DataView dv = table.DefaultView;
@@ -210,7 +228,25 @@ namespace ClimateControll
                     {
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                        if (RBalarmOn.Checked)
+                        {
+                            if (temp.IsAlarmed)
+                            {
+                                table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                            }
+                        }
+                        else if (RBalarmOff.Checked)
+                        {
+                            if (!temp.IsAlarmed)
+                            {
+                                table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                            }
+
+                        }
+                        else
+                        {
+                            table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                        }
 
                     }
                     DataView dv = table.DefaultView;
@@ -232,7 +268,25 @@ namespace ClimateControll
                     {
                         TempInfo temp = documentSnapshot.ConvertTo<TempInfo>();
 
-                        table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity);
+                        if (RBalarmOn.Checked)
+                        {
+                            if (temp.IsAlarmed)
+                            {
+                                table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                            }
+                        }
+                        else if (RBalarmOff.Checked)
+                        {
+                            if (!temp.IsAlarmed)
+                            {
+                                table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                            }
+
+                        }
+                        else
+                        {
+                            table.Rows.Add(temp.WhenString, temp.Temperature, temp.Humidity, temp.IsAlarmed);
+                        }
 
 
 
